@@ -1,0 +1,5 @@
+.home{
+    .tittle{
+        @include styleText(black,$fs-8,$fw-3);
+    }
+}

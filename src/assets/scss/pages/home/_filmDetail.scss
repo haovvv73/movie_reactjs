@@ -1,0 +1,36 @@
+.filmDetail {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, rgba(23, 23, 23, 0.2) 0, #171717);
+        z-index: -1;
+    }
+    .filmDetail__content {
+        padding: 10% 10% 40px 10%;
+        .filmDetail__img {
+            img {
+                height: 330px;
+                width: 260px;
+                box-shadow: 0 7px 20px 0 rgb(0, 0, 0);
+                border-radius: 5px;
+            }
+        }
+        .filmDetail__txt {
+            width: 800px;
+            color: rgba(255, 255, 255, 0.788);
+        }
+    }
+}
+.filmDetail__cinema {
+    background-color: #171717;
+    padding-top: 5%;
+}

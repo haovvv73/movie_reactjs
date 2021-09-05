@@ -1,0 +1,14 @@
+.headerCinema{
+    .headerCinema__nav{
+        background-color: rgba(0, 0, 0, 0.700);
+        z-index: 10;
+        .navbar-brand{
+            @include styleText(white,$fs-2,$fw-2);
+            cursor: pointer;
+            &:hover{
+                transition: 0.5s;
+                color: $color-3;
+            }
+        }
+    }
+}

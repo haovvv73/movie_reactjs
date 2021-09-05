@@ -1,0 +1,2 @@
+export const DISPLAY_SUCESS = 'DISPLAY_SUCESS';
+export const HIDE_SUCESS = 'HIDE_SUCESS';
