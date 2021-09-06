@@ -29,6 +29,7 @@ function App() {
         <UserTemp path="/login" exact Component={Login} />
         <UserTemp path="/register" exact Component={Register}/>
         <BookingTemp path="/booking/:id" exact Component={BookTicket}/>
+        
         <AdminTemp path="/admin" exact Component={Admin} />
       </Switch>
     </Router>

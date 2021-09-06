@@ -1,9 +1,7 @@
 .header{    
     .header__navbar{
-        height: $hw-2;
-        background-color: $color-2;
-        // height: $hw-1; 
-        // background-color: rgba(0, 0, 0, 0.374);
+        height: $hw-1; 
+        background-color: rgba(0, 0, 0, 0.374);
         transition: 1s;
         z-index: 10;
         .header__grand{
@@ -24,12 +22,13 @@
             }
         }
     }
+    //config libs
+    .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+        color: white;
+    }
     // khi croll man hinh 
     .header__stick{
         height: $hw-2;
         background-color: $color-2;
-    }
-    .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
-        color: white;
     }
 }

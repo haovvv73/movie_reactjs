@@ -12,7 +12,7 @@ export const FilmListAction = ()=>{
                 arrListPhim:result.data.content,
             })
         }catch(error){
-            console.log('loi list phim',error);
+
         }
     }
 } 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import BannerCarousel from './banner/BannerCarousel'
 import Cinema from './cinema/Cinema'
 import FilmList from './filmList/FilmList'

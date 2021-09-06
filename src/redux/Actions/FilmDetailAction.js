@@ -7,7 +7,6 @@ export const FilmDetailAction = (id)=>{
     return async (dispatch)=>{
         try{
             const result = await homeService.getPhimDetail(id);
-
             dispatch({
                 type:SET_DETAILPHIM,
                 arrPhimDetail : result.data.content,

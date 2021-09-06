@@ -2,20 +2,7 @@ import { SET_LISTPHIM } from "../type/case/home/HomeType";
 
 const stateDefault = {
     arrListPhim : [
-        {
-            // "maPhim": "",
-            // "tenPhim": "",
-            // "biDanh": "",
-            // "trailer": "",
-            // "hinhAnh": "",
-            // "moTa": "",
-            // "maNhom": "",
-            // "ngayKhoiChieu": "",
-            // "danhGia": "",
-            // "hot": "",
-            // "dangChieu": "",
-            // "sapChieu": "",
-        }
+        {}
     ]
 }
 

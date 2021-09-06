@@ -7,7 +7,6 @@ export const CinemaAction = ()=>{
         try{
             dispatch(DisplayLoading)
             const result = await homeService.getDataCinema();
-
             await dispatch({
                 type:SET_DATACINEMA,
                 dataCinema: result.data.content,

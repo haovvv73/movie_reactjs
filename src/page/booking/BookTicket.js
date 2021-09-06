@@ -22,7 +22,7 @@ export default function BookTiket(props) {
     useEffect(() => {
         // gọi api vé xem phim
         dispatch(BookTicketAction(id));
-    }, [])
+    },[])
     // responsive bill
     useEffect(()=>{
         let handSize = ()=>{
@@ -62,21 +62,22 @@ export default function BookTiket(props) {
                         <p className="text-secondary mb-0">ghế Thường</p>
                         <button className="chair__nomarl" disabled></button>
                     </div>
-
                     <div>
                         <p className="text-secondary mb-0">Ghế vip</p>
                         <button className="chair__vip" disabled></button>
                     </div>
-
                     <div>
                         <p className="text-secondary mb-0">đã đặt</p>
                         <button className="chair__booked" disabled></button>
+                    </div>
+                    <div>
+                        <p className="text-secondary mb-0">ghế bạn đặt</p>
+                        <button className="chair__user" disabled></button>
                     </div>
                 </div>
             </div>
         </div>
     }
-
 
     let nguoiDung = JSON.parse(localStorage.getItem(USER_LOGIN));
     // hiển thị danh sách ghế
@@ -93,21 +94,16 @@ export default function BookTiket(props) {
                     let classBooked = ghe.daDat === true ? "chair__booked" : "";
                     // class ghe chon
                     let classSelect = "";
-
+                    // class ghe user
                     let classUser = "";
                     if(nguoiDung.taiKhoan == ghe.taiKhoanNguoiDat){
                         classUser = "chair__user"
                     }
-
-
                     // kiểm tra ghế có trong mảng ghế đang dặt ?
                     let indexGhe = danhSachGheDangDat.findIndex(gheDat => gheDat.maGhe === ghe.maGhe);
                     if (indexGhe !== -1) {
                         classSelect = "chair__select";
                     }
-
-                    
-
                     return <button key={index} disabled={ghe.daDat} className={`chair__nomarl m-1 ${classVip} ${classBooked} ${classSelect} ${classUser}`} onClick={() => {
                         dispatch({
                             type: DAT_VE,
@@ -153,7 +149,15 @@ export default function BookTiket(props) {
                 const action = new TicKetModel();
                 action.maLichChieu = id;
                 action.danhSachVe = danhSachGheDangDat;
-                dispatch(DatVeAction(action));
+                // kiểm tra user có đặt ghế chưa
+                const dk = _.size(danhSachGheDangDat)
+                if( dk > 0){
+                    // yes => post
+                    dispatch(DatVeAction(action));
+                }else{
+                    // no => yêu cầu đặt ghế
+                    alert("vui lòng chọn ghế")
+                }
             }}> thanh toán </button>
         </div>
     }

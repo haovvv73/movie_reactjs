@@ -1,9 +1,7 @@
 import { SET_BANNER } from "../type/case/home/HomeType";
 
 const stateDefault = {
-    arrBanner:[
-        {},
-    ],
+    arrBanner:[],
 }
 
 

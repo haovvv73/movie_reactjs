@@ -6,7 +6,7 @@ import { HIDE_SUCESS } from '../../redux/type/case/sucess/sucessType';
 
 export default function Bookingsucess() {
     const dispatch = useDispatch();
-
+    // trạng thái sucess
     const { isSucess } = useSelector(state => state.sucessReducer)
 
     return (

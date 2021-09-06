@@ -6,7 +6,6 @@ export const BannerCarouselAction = ()=>{
     return async (dispatch)=>{
         try{
             const result = await homeService.getPictureBanner() ;
-
             dispatch({
                 type:SET_BANNER,
                 arrBanner:result.data.content,
