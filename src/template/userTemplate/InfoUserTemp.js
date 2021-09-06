@@ -7,10 +7,10 @@ import Header from "../../component/header/Header";
 import imgBackground from '../../assets/img/background1.jpg';
 import { USER_LOGIN } from "../../util/setting";
 
-export const UserTemp = (props) => {
+export const InfoTemp = (props) => {
 
-    if(localStorage.getItem(USER_LOGIN)){
-        return <Redirect to="/" /> 
+    if(!localStorage.getItem(USER_LOGIN)){
+        return <Redirect to="/login" /> 
     }
 
     const { Component, ...restProps } = props;

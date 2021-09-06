@@ -1,7 +1,7 @@
 
-.cinema {
+.cinemaFilm {
     padding-bottom: 5%;
-    .cinema__logo {
+    .cinemaFilm__logo {
         //class libs
         .react-tabs__tab:focus {
             box-shadow: none;
@@ -32,22 +32,20 @@
         }
     }
     //--------------------------------------
-    .cinema__content {
+    .cinemaFilm__content {
         color: black;
         background-color: white;
         box-shadow: 0 7px 20px 0 rgb(182, 179, 179);
         border-radius: 10px;
         overflow: hidden;
-        .cinema__items{
+        //------
+        .cinemaFilm__contentListAddress {
+            background-color: rgb(242, 243, 233);
+            margin: 0px;
             padding: 10px;
-            height: 40vw;
+            height: 360px;
             overflow: hidden;
             overflow-y: scroll;
-        }
-        //------
-        .cinema__contentListAddress {
-            background-color: rgb(242, 243, 233);
-            margin: 0;
             &::-webkit-scrollbar {
                 width: 4px;
             }
@@ -61,7 +59,7 @@
                     background-color: rgba(128, 128, 128, 0.466);
                 }
             }
-            .cinema__contentAddress {
+            .cinemaFilm__contentAddress{
                 margin: 10px 10px 15px 10px;
                 padding: 20px;
                 border-radius: 10px;
@@ -83,7 +81,7 @@
             }
         }
         //-----
-        .cinema__contentListFilm {
+        .cinemaFilm__contentListFilm {
             scroll-snap-type: y proximity;      
             &::-webkit-scrollbar {
                 width: 5px;
@@ -93,7 +91,7 @@
                 background-color: rgba(128, 128, 128, 0.466);
             }
             //--
-            .cinema__contentFilm {
+            .cinemaFilm__contentFilm {
                 scroll-snap-align: start;
                 margin: 20px 15px 20px 15px;
                 box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.274);
@@ -103,13 +101,13 @@
                     border-radius: 20px;
                     padding: 15px;
                 }
-                .cinema__contentFilmtxt {
+                .cinemaFilm__contentFilmtxt {
                     width: 70%;
                     padding: 15px;
                     a:hover {
                         text-decoration: none;
                     }
-                    .cinema__choosefilm {
+                    .cinemaFilm__choosefilm {
                         border: $color-3 1px solid;
                         border-radius: 5px;
                         @include styleText($color-3, $fs-1, $fw-2);

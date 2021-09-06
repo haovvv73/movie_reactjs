@@ -7,7 +7,7 @@
 }
 // button filmList
 .filmList__overtxt {
-    button {
+    .filmList__btn {
         border: none;
         width: 200px;
         height: 60px;
@@ -26,12 +26,26 @@
             background-color: rgba(0, 0, 0, 0.288);
         }
     }
-    button:hover::before {
+    .filmList__btn:hover::before {
         transition: 0.5s;
         left: 50%;
         right: 50%;
         width: 0px;
         opacity: 0;
+    }
+    .filmList__trailerBtn {
+        font-size: 30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid white;
+        padding-left: 5px;
+        line-height: 1.9;
+        transition: 0.2s;
+    }
+    .filmList__trailerBtn:hover {
+        transition: 0.5s;
+        transform: scale(1.2);
     }
 }
 .filmList {
@@ -49,18 +63,17 @@
                 color: white;
                 transition: 0.5s;
             }
-            &:focus {
-                background-color: $color-3;
-                border: $color-3 1px solid;
-                color: white;
-            }
+        }
+        .btn__active {
+            background-color: $color-3;
+            border: $color-3 1px solid;
+            color: white;
         }
     }
 }
-
 // button filmDetail
 .filmDetail {
-    .filmDetail__booking {
+    .filmDetail__btn {
         border: none;
         padding: 13px 40px;
         border-radius: 5px;
@@ -92,7 +105,7 @@
             left: 10%;
         }
     }
-    .filmDetail__booking:hover {
+    .filmDetail__btn:hover {
         &::before {
             left: 80%;
             background-color: rgb(255, 0, 0);
@@ -105,17 +118,16 @@
         color: $color-3;
     }
 }
-
 //button bookTicket
-.booking__btnpay{
+.booking__btnpay {
     color: white;
     border: none;
-    background-color: $color-3;       
+    background-color: $color-3;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0px 0px 25px 5px rgba(240, 127, 127, 0.39);
     //hover
-    &:hover{
+    &:hover {
         transition: 0.5s;
         color: $color-3;
         background-color: white;

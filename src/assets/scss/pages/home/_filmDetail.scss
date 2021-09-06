@@ -30,6 +30,15 @@
         }
     }
 }
+.filmDetail__trailer{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.500);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
 .filmDetail__cinema {
     background-color: #171717;
     padding-top: 5%;

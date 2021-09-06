@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BookTicketAction, DatVeAction } from '../../redux/Actions/datVeAction/BookTicketAction';
 import _ from 'lodash';
+// import model
 import { TicKetModel } from '../../_core/models/DataTicketModel';
-
-import { DAT_VE } from '../../redux/type/case/datVe/BookingType';
+// import types
+import { DAT_VE, DAT_VE_HOAN_TAT } from '../../redux/type/case/datVe/BookingType';
 import { USER_LOGIN } from '../../util/setting';
 
 export default function BookTiket(props) {
@@ -22,6 +23,12 @@ export default function BookTiket(props) {
     useEffect(() => {
         // gọi api vé xem phim
         dispatch(BookTicketAction(id));
+        // trc khi rời cây DOM clear vé đang đặt
+        return ()=>{
+            dispatch({
+                type:DAT_VE_HOAN_TAT,
+            })
+        }
     },[])
     // responsive bill
     useEffect(()=>{
@@ -78,7 +85,7 @@ export default function BookTiket(props) {
             </div>
         </div>
     }
-
+    // data user
     let nguoiDung = JSON.parse(localStorage.getItem(USER_LOGIN));
     // hiển thị danh sách ghế
     const seatRender = () => {
@@ -96,8 +103,9 @@ export default function BookTiket(props) {
                     let classSelect = "";
                     // class ghe user
                     let classUser = "";
-                    if(nguoiDung.taiKhoan == ghe.taiKhoanNguoiDat){
-                        classUser = "chair__user"
+                    // kiểm tra ghế của user
+                    if(nguoiDung.taiKhoan === ghe.taiKhoanNguoiDat){
+                        classUser = "chair__user";
                     }
                     // kiểm tra ghế có trong mảng ghế đang dặt ?
                     let indexGhe = danhSachGheDangDat.findIndex(gheDat => gheDat.maGhe === ghe.maGhe);
@@ -114,7 +122,6 @@ export default function BookTiket(props) {
             </div>
         </div>
     }
-
     // hiển thị hóa đơn
     const billRender = () => {
         return <div className="booking__items col-3 container" >
@@ -168,7 +175,15 @@ export default function BookTiket(props) {
                 const action = new TicKetModel();
                 action.maLichChieu = id;
                 action.danhSachVe = danhSachGheDangDat;
-                dispatch(DatVeAction(action));
+                // kiểm tra user có đặt ghế chưa
+                const dk = _.size(danhSachGheDangDat)
+                if( dk > 0){
+                    // yes => post
+                    dispatch(DatVeAction(action));
+                }else{
+                    // no => yêu cầu đặt ghế
+                    alert("vui lòng chọn ghế")
+                }
             }}> thanh toán </button>
             <div className="col-6">
                 <div className="row pt-3">

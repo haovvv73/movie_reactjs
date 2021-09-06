@@ -1,6 +1,6 @@
 export class DataTicketModel {
     thongTinPhim = new ThongtinPhim();
-    danhSachGhe = [];
+    danhSachGhe = [];// ghe
 }
 
 export class TicKetModel {
@@ -24,13 +24,13 @@ class ThongtinPhim {
     gioChieu = "";
 }
 
-class Ghe {
-    maGhe = ""
-    tenGhe = "";
-    maRap = "";
-    loaiGhe = "";
-    stt = "";
-    giaVe = "";
-    daDat = "";
-    taiKhoanNguoiDat = "";
-}
+// class Ghe {
+//     maGhe = ""
+//     tenGhe = "";
+//     maRap = "";
+//     loaiGhe = "";
+//     stt = "";
+//     giaVe = "";
+//     daDat = "";
+//     taiKhoanNguoiDat = "";
+// }

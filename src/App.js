@@ -14,6 +14,8 @@ import Loading from './component/loading/Loading';
 import { AdminTemp } from './template/adminTemplate/AdminTemplate';
 import Admin from './page/admin/Admin';
 import Bookingsucess from './component/sucess/Bookingsucess';
+import InfoUser from './page/infoUser/InfoUser';
+import { InfoTemp } from './template/userTemplate/InfoUserTemp';
 
 
 export const history = createBrowserHistory();
@@ -28,8 +30,8 @@ function App() {
         <HomeTemp path="/detail/:id" exact Component={FilmDetail} />
         <UserTemp path="/login" exact Component={Login} />
         <UserTemp path="/register" exact Component={Register}/>
+        <InfoTemp path="/info" exact Component={InfoUser}/>
         <BookingTemp path="/booking/:id" exact Component={BookTicket}/>
-        
         <AdminTemp path="/admin" exact Component={Admin} />
       </Switch>
     </Router>

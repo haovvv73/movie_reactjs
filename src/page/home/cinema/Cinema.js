@@ -1,18 +1,21 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+// import libs
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import moment from 'moment';
+
 import { CinemaAction } from '../../../redux/Actions/CinemaAction';
-import { NavLink } from 'react-router-dom';
 
 export default function Cinema(props) {
 
     const dispatch = useDispatch();
 
     useEffect(() => {
+        // lấy dữ liệu cinema
         dispatch(CinemaAction());
-    }, [])
+    },[])
 
     // dữ liệu các suất chiếu của các phim
     const { dataCinema } = useSelector(state => state.CinemaReducer);
@@ -34,7 +37,7 @@ export default function Cinema(props) {
                         {/* thông tin địa điểm */}
                         <TabList className="cinema__contentListAddress cinema__items col-12 col-lg-4">
                             {rap.lstCumRap.map((cumRap, index) => {
-                                return <Tab className="cinema__contentAddressItems" key={index}>
+                                return <Tab className="cinema__contentAddress" key={index}>
                                     <div className="d-flex align-items-center">
                                         <img style={{ height: '50px', width: '50px', borderRadius: '50%' }} className="img-fluid" src={cumRap.hinhAnh} alt="123" />
                                         <span className="m-2">{cumRap.tenCumRap}</span>

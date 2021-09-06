@@ -1,8 +1,9 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+// import libs
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import moment from 'moment';
-import { NavLink } from 'react-router-dom';
 
 export default function FilmDetail_cinema(props) {
 
@@ -14,7 +15,6 @@ export default function FilmDetail_cinema(props) {
         return data.heThongRapChieu?.map((heThongRap, index) => {
             return <Tab key={index}> <img src={heThongRap.logo} alt="123" className="img-fluid" /> </Tab>
         })
-
     }
 
     // hàm hiển thị địa chỉ và suất chiếu phim
@@ -24,9 +24,9 @@ export default function FilmDetail_cinema(props) {
                 <Tabs>
                     <div className="row mx-0">
                         {/* thông tin địa điểm */}
-                        <TabList className="cinema__contentListAddress cinema__items2 col-12 col-lg-4 ">
+                        <TabList className="cinemaFilm__contentListAddress col-12 col-lg-4 ">
                             {rap.cumRapChieu.map((cumRap, index) => {
-                                return <Tab className="cinema__contentAddress" key={index}>
+                                return <Tab className="cinemaFilm__contentAddress" key={index}>
                                     <div className="d-flex align-items-center">
                                         <img style={{ height: '50px', width: '50px', borderRadius: '50%' }} className="img-fluid" src={cumRap.hinhAnh} alt="123" />
                                         <span className="m-2">{cumRap.tenCumRap}</span>
@@ -36,20 +36,20 @@ export default function FilmDetail_cinema(props) {
                             })}
                         </TabList>
                         {/* thông tin suất chiếu phim */}
-                        <div className="cinema__contentListFilm col-12 col-lg-8">
+                        <div className="cinemaFilm__contentListFilm col-12 col-lg-8">
                             {rap.cumRapChieu.map((cumRap, index) => {
                                 return <TabPanel key={index}>
-                                    {<div className="cinema__contentFilm d-flex">
+                                    {<div className="cinemaFilm__contentFilm d-flex">
                                         {/* hinh anh phim */}
                                         <img src={data.hinhAnh} alt="123" />
                                         {/* suất chiếu và thông tin suất chiếu */}
-                                        <div className="cinema__contentFilmtxt ">
+                                        <div className="cinemaFilm__contentFilmtxt ">
                                             <h4 className="m-2">{data.tenPhim}</h4>
                                             <small className="form-text text-muted ml-2">{cumRap.diaChi}</small>
                                             <div className="row mx-0">
                                                 {/* suất chiếu theo giờ  */}
                                                 {cumRap.lichChieuPhim.slice(0,4).map((gioChieu, index) => {
-                                                    return <NavLink to={`/booking/${gioChieu.maLichChieu}`} key={index} > <p className="cinema__choosefilm p-2 m-2">
+                                                    return <NavLink to={`/booking/${gioChieu.maLichChieu}`} key={index} > <p className="cinemaFilm__choosefilm p-2 m-2">
                                                         {moment(gioChieu.ngayChieuGioChieu).format('hh:mm A')}
                                                     </p></NavLink> 
                                                 })}
@@ -66,18 +66,17 @@ export default function FilmDetail_cinema(props) {
     }
 
     return (
-        <div className="container cinema">
+        <div className="container cinemaFilm">
             <Tabs>
-                <div className="cinema__logo">
-                    <TabList className="cinema__logoList d-flex justify-content-center flex-wrap">
+                <div className="cinemaFilm__logo">
+                    <TabList className="cinemaFilm__logoList d-flex justify-content-center flex-wrap">
                         {renderHeThongRap()}
                     </TabList>
                 </div>
-                <div className="cinema__content" >
+                <div className="cinemaFilm__content" >
                     {renderDanhSachPhim()}
                 </div>
             </Tabs>
-
         </div>
     )
 }

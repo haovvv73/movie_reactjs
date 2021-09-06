@@ -1,8 +1,9 @@
 import React from 'react';
-import imgBackground from '../../assets/img/background1.jpg';
+import { useDispatch } from 'react-redux';
+//import libs
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { useDispatch } from 'react-redux';
+//import action
 import { RegisterAction } from '../../redux/Actions/nguoiDungAction/RegisterAction';
 
 export default function Register() {
@@ -27,14 +28,13 @@ export default function Register() {
             hoTen: yup.string().required('không được bỏ trống').min(6,'tài khoản phải chứa 6 ký tự'),
         }),
         onSubmit: values => {
-
+            // gửi dữ liệu lên database
             dispatch(RegisterAction(values));
-            console.log('fom day', values);
         }
     })
 
     return (
-        <div className="register d-flex justify-content-center align-items-center" style={{ backgroundImage: `url(${imgBackground})`, padding: '10%' }}>
+        <div className="register d-flex justify-content-center align-items-center">
             <div className="register__form mt-5">
                 <h3> <span className="text-danger">CGV</span> Chào Thành Viên Mới</h3>
                 {/* form đăng ký */}

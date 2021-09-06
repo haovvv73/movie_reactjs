@@ -1,10 +1,12 @@
 import React from 'react';
-import imgCharacter from '../../assets/img/character.png';
-import imgBackground from '../../assets/img/background1.jpg';
-import { useFormik } from 'formik';
 import { useDispatch} from 'react-redux';
-import { LoginAction } from '../../redux/Actions/nguoiDungAction/LoginAction';
+//import picture
+import imgCharacter from '../../assets/img/character.png';
+//import libs
+import { useFormik } from 'formik';
 import * as yup from 'yup';
+//import action
+import { LoginAction } from '../../redux/Actions/nguoiDungAction/LoginAction';
 
 export default function Login(props) {
 
@@ -21,15 +23,15 @@ export default function Login(props) {
             matKhau: yup.string().required('không được bỏ trống').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,}$/, 'mật khẩu phải có 6 ký tự - viết hoa - số - ký tự đặc biệt'),
         }),
         onSubmit: values => {
+            // gửi dữ liệu lên database
             dispatch(LoginAction(values));
         },
     });
 
     return (
-        <div className="login__background" style={{ backgroundImage: `url(${imgBackground})`, padding:'10%' }}>
-            <div className="container login">
+            <div className="container login mt-5">
                 <div className="row">
-                    <div className="login__form col-6">
+                    <div className="login__form col-12 col-lg-6">
                         {/* form đăng nhập */}
                         <form onSubmit={formik.handleSubmit}>
                             <h2 className="mb-4">XIN CHÀO</h2>
@@ -46,11 +48,10 @@ export default function Login(props) {
                             <button type="submit" className="container mt-3">Đăng Nhập</button>
                         </form>
                     </div>
-                    <div className="loginImg col-6">
+                    <div className="loginImg col-12 col-lg-6 text-center">
                         <img className="img-fluid" src={imgCharacter} alt="123" />
                     </div>
                 </div>
             </div>
-        </div>
     )
 }

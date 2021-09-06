@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { BannerCarouselAction } from '../../../redux/Actions/BannercarouselAction';
-
+// import picture
+import bghead from '../../../assets/img/header-before-bg.png';
+import bgfoot from '../../../assets/img/banner-shadow-btm.png';
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,6 +16,7 @@ export default function BannerCarousel(props) {
     const { arrBanner } = useSelector(state => state.BannerCarouselReducer)
 
     useEffect(() => {
+        // lấy dữ liệu banner
         dispatch(BannerCarouselAction());
     },[])
 
@@ -55,6 +58,8 @@ export default function BannerCarousel(props) {
             <Slider {...settings}>
                 {renderBanner()}
             </Slider>
+            <img src={bghead} alt="123" className="img-fluid bghead"/>
+            <img src={bgfoot} alt="123" className="img-fluid bgfoot"/>
         </div>
     )
 }

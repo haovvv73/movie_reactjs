@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 import { homeService } from '../../services/HomeService';
 import { SET_BANNER } from '../type/case/home/HomeType';
 

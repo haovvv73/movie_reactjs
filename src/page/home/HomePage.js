@@ -1,15 +1,26 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import BannerCarousel from './banner/BannerCarousel'
 import Cinema from './cinema/Cinema'
 import FilmList from './filmList/FilmList'
 import PromotionBanner from './promotionBanner/PromotionBanner'
+import logo from '../../assets/img/logo.png'
 
 export default function HomePage() {
-    return ( 
+    return (
         // trang chính của web
         <div className="home">
             <BannerCarousel />
-            <div className="mt-5">...</div>
+            <div className="home__banner container-fluid p-5">
+                <div className="home__content row justify-content-center p-3">
+                    <div className="text-center m-5">
+                        <img src={logo} alt="123" className="img-fluid" />
+                    </div>
+                    <div className="home__items m-5">
+                        <h5>Introducing CGV Plus, the exclusive loyalty program that pays you back!</h5>
+                        <h4>ROXY PLUS. MORE MOVIES. MORE REWARDS.</h4>
+                    </div>
+                </div>
+            </div>
             <div className="text-center m-5">
                 <hr style={{ width: '20%', margin: 'auto', borderTop: '3px solid black' }} />
                 <p className="tittle m-1">PHIM</p>

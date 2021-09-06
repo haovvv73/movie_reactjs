@@ -2,30 +2,36 @@
 @import "./helpers/variables";
 @import "./helpers/mixin";
 @import "./helpers/responsive";
+
 //vendor
 @import "./vendors/loading";
+
 // base
 @import "./base/reset";
+
 // component
 @import "./components/button";
+
 // layout
 @import "./layouts/header/header";
 @import "./layouts/header/headerCinema";
 @import "./layouts/footer";
 @import "./layouts/sucess/sucessBooking.scss";
-
 // page 
 // _home
 @import "./pages/home/bannerCarousel";
 @import "./pages/home/filmList";
 @import "./pages/home/filmDetail";
 @import "./pages/home/cinema";
+@import "./pages/home//filmDetailCinema";
 // _login
 @import "./pages/login/login";
 // _register
 @import "./pages/register/register";
 // _booking
 @import "./pages/booking/booking";
+//_info
+@import "./pages/info/infoUser";
 
 // theme
-@import ".//themes/hometemplate"
+@import ".//themes/hometemplate";

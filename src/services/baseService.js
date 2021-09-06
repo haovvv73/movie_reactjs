@@ -3,7 +3,7 @@ import { ACCESSTOKEN, DOMAIN } from "../util/setting";
 
 export  class baseService  {
     constructor(){
-        
+    
     }
 
     get = (url)=>{

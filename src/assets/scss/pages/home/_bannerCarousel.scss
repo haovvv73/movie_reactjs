@@ -1,31 +1,47 @@
-.bannerCarousel{
+.bannerCarousel {
     //css lib
-    .slick-slider{
-        .custome__dots{
-            bottom:25px;
-            li{
-                div{
+    .slick-slider {
+        .custome__dots {
+            bottom: 25px;
+            z-index: 1;
+            li {
+                div {
                     width: 20px;
                     height: 20px;
-                    border: 1px rgba(255, 255, 255, 0.555) solid;
+                    border: 1px white solid;
                     border-radius: 50%;
-                    background-color: rgba(255, 255, 255, 0.555);
+                    background-color: transparent;
                 }
             }
-            .slick-active{
-                    div{
-                        width: 20px !important;
-                        height: 20px !important;
-                        border: 1px $color-3 solid !important;
-                        border-radius: 50% !important;
-                        background-color: $color-3 !important;
-                    } 
+            .slick-active {
+                div {
+                    width: 20px !important;
+                    height: 20px !important;
+                    border: 1px white solid !important;
+                    border-radius: 50% !important;
+                    background-color: white !important;
+                }
             }
         }
     }
+    //css lib
+    margin-bottom: -9px;
+    position: relative;
     .bannerCarousel__backGround {
         .backGround {
             height: 40vw;
         }
+    }
+    .bghead {
+        position: absolute;
+        width: 100vw;
+        height: 188px;
+        top: 0;
+        left: 0;
+    }
+    .bgfoot {
+        position: absolute;
+        bottom: 8px;
+        left: 0;
     }
 }
