@@ -7,46 +7,51 @@ import _ from 'lodash';
 import { TicKetModel } from '../../_core/models/DataTicketModel';
 // import types
 import { DAT_VE, DAT_VE_HOAN_TAT } from '../../redux/type/case/datVe/BookingType';
-import { USER_LOGIN } from '../../util/setting';
+
 
 export default function BookTiket(props) {
     const dispatch = useDispatch()
-    
-    const [size,setSize] = useState(window.innerWidth)
+
+    const [size, setSize] = useState(window.innerWidth)
 
     // mã rạp chiếu
     let { id } = props.match.params;
     // dữ liệu vé xem phim // dữ liệu ghế đang đặt , thuong , vip
     const { dataTicket, danhSachGheDangDat, danhSachGheDangDatThuong, danhSachGheDangDatVip } = useSelector(state => state.BookTicketReducer);
     const { danhSachGhe, thongTinPhim } = dataTicket;
+    //dữ liệu người dùng đăng nhập
+    const { loginUser } = useSelector(state => state.LoginReducer);
+    // data user
+    let nguoiDung = loginUser;
 
     useEffect(() => {
         // gọi api vé xem phim
         dispatch(BookTicketAction(id));
-        // trc khi rời cây DOM clear vé đang đặt
-        return ()=>{
-            dispatch({
-                type:DAT_VE_HOAN_TAT,
-            })
-        }
-    },[])
+        // clear vé đang đặt
+        dispatch({
+            type: DAT_VE_HOAN_TAT,
+        })
+    }, [])
     // responsive bill
-    useEffect(()=>{
-        let handSize = ()=>{
+    useEffect(() => {
+        let handSize = () => {
             setSize(window.innerWidth)
         }
-        window.addEventListener('resize',handSize);
-    },[])
+        window.addEventListener('resize', handSize);
+        return ()=>[
+            window.removeEventListener('resize', handSize)
+        ]
+    }, [])
 
     // hiển thị thông tin 
     const infoRender = () => {
         return <div className="booking__info" >
             <div className="p-5">
                 <h1 className="text-center" >{thongTinPhim.tenPhim}</h1>
-                <p className="text-secondary">
+                <p className="text-secondary text-center">
+                    <i className="fa fa-map-marker-alt mr-3 text-white"></i>
                     {thongTinPhim.tenCumRap}
-                    <br />
-                    {thongTinPhim.diaChi}
+                    {/* {thongTinPhim.diaChi} */}
                 </p>
             </div>
             <div className="row booking__infoTxt">
@@ -85,8 +90,7 @@ export default function BookTiket(props) {
             </div>
         </div>
     }
-    // data user
-    let nguoiDung = JSON.parse(localStorage.getItem(USER_LOGIN));
+
     // hiển thị danh sách ghế
     const seatRender = () => {
         return <div className="booking__seat pt-2 pb-5">
@@ -104,7 +108,7 @@ export default function BookTiket(props) {
                     // class ghe user
                     let classUser = "";
                     // kiểm tra ghế của user
-                    if(nguoiDung.taiKhoan === ghe.taiKhoanNguoiDat){
+                    if (nguoiDung.taiKhoan === ghe.taiKhoanNguoiDat) {
                         classUser = "chair__user";
                     }
                     // kiểm tra ghế có trong mảng ghế đang dặt ?
@@ -158,10 +162,10 @@ export default function BookTiket(props) {
                 action.danhSachVe = danhSachGheDangDat;
                 // kiểm tra user có đặt ghế chưa
                 const dk = _.size(danhSachGheDangDat)
-                if( dk > 0){
+                if (dk > 0) {
                     // yes => post
                     dispatch(DatVeAction(action));
-                }else{
+                } else {
                     // no => yêu cầu đặt ghế
                     alert("vui lòng chọn ghế")
                 }
@@ -170,17 +174,17 @@ export default function BookTiket(props) {
     }
     // hiển thị khi width < 950px
     const billStickRender = () => {
-        return <nav className="row fixed-bottom bg-dark" style={{zIndex:'10'}}>
+        return <nav className="row fixed-bottom bg-dark" style={{ zIndex: '10' }}>
             <button className="booking__btnpay container m-4 col-4" onClick={() => {
                 const action = new TicKetModel();
                 action.maLichChieu = id;
                 action.danhSachVe = danhSachGheDangDat;
                 // kiểm tra user có đặt ghế chưa
                 const dk = _.size(danhSachGheDangDat)
-                if( dk > 0){
+                if (dk > 0) {
                     // yes => post
                     dispatch(DatVeAction(action));
-                }else{
+                } else {
                     // no => yêu cầu đặt ghế
                     alert("vui lòng chọn ghế")
                 }

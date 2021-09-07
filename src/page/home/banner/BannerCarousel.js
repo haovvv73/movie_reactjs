@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { BannerCarouselAction } from '../../../redux/Actions/BannercarouselAction';
 // import picture
@@ -13,12 +13,32 @@ export default function BannerCarousel(props) {
     const dispatch = useDispatch();
 
     // dữ liệu banner 
-    const { arrBanner } = useSelector(state => state.BannerCarouselReducer)
+    const { arrBanner } = useSelector(state => state.BannerCarouselReducer);
+    
+    // biến add margin
+    const [addMargin,setAddMargin] = useState("");
 
     useEffect(() => {
         // lấy dữ liệu banner
         dispatch(BannerCarouselAction());
     },[])
+
+    // width < 650 add margin 
+    useEffect(() => {
+        const onSmallNav = () => {
+            if(window.innerWidth < 650){
+                // on bannerCarousel__margin
+                setAddMargin("bannerCarousel__margin");
+            }else{
+                // width > 650 off bannerCarousel__margin
+                setAddMargin("");
+            }
+        }
+        window.addEventListener('resize',onSmallNav);
+        return ()=>{
+            window.removeEventListener('resize', onSmallNav);
+        }
+    }, [])
 
     //scss background 
     const bannerStyle ={
@@ -54,7 +74,7 @@ export default function BannerCarousel(props) {
       };
 
     return (
-        <div className="bannerCarousel">
+        <div className={`bannerCarousel ${addMargin} `}>
             <Slider {...settings}>
                 {renderBanner()}
             </Slider>

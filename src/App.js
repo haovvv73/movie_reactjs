@@ -15,7 +15,7 @@ import { AdminTemp } from './template/adminTemplate/AdminTemplate';
 import Admin from './page/admin/Admin';
 import Bookingsucess from './component/sucess/Bookingsucess';
 import InfoUser from './page/infoUser/InfoUser';
-import { InfoTemp } from './template/userTemplate/InfoUserTemp';
+import { InfoTemp } from './template/userTemplate/InfoUserTemplate';
 
 
 export const history = createBrowserHistory();

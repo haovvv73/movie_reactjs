@@ -5,6 +5,7 @@ import Footer from "../../component/footer/Footer";
 import Header from "../../component/header/Header";
 // import picture
 import imgBackground from '../../assets/img/background1.jpg';
+// import types
 import { USER_LOGIN } from "../../util/setting";
 
 export const InfoTemp = (props) => {

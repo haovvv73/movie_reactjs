@@ -25,7 +25,7 @@ export default function FilmDetail(props) {
         dispatch(FilmDetailAction(id));
         // lấy dữ liệu lịch chiếu theo phim
         dispatch(FilmDetailCinemaAction(id));
-    }, []);
+    },[]);
 
     let { tenPhim, ngayKhoiChieu, hinhAnh, trailer, moTa } = arrPhimDetail;
 
@@ -38,7 +38,7 @@ export default function FilmDetail(props) {
             onClick={() => {
                 setOnPop("")
             }}>
-            <iframe style={{ height: '40vw', width: '60vw' }} src={trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe style={{ height: '40vw', width: '60vw' }} src={trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
     }
 

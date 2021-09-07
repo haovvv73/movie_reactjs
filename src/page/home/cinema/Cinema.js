@@ -65,7 +65,6 @@ export default function Cinema(props) {
                                                 </p></NavLink>
                                             })}</div>
                                         </div>
-
                                     </div>
                                 })}</TabPanel>
                             })}

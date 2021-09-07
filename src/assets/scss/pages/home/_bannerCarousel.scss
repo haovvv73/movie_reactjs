@@ -35,7 +35,7 @@
     .bghead {
         position: absolute;
         width: 100vw;
-        height: 188px;
+        height: 12vw;
         top: 0;
         left: 0;
     }
@@ -44,4 +44,7 @@
         bottom: 8px;
         left: 0;
     }
+}
+.bannerCarousel__margin{
+    margin-top: 75px;
 }

@@ -7,6 +7,7 @@ import { FilmDetailCinemaReducer } from './Reducers/FilmDetailCinemaReducer';
 import { FilmDetailReducer } from './Reducers/FilmDetailReducer';
 import { FilmListReducer } from './Reducers/FilmListReducer';
 import { LoadingReducer } from './Reducers/loadingReducer/LoadingReducer';
+import { InfoUserReducer } from './Reducers/nguoiDungReducer/InfoUserReducer';
 import { LoginReducer } from './Reducers/nguoiDungReducer/LoginReducer';
 import { sucessReducer } from './Reducers/sucessReducer/sucessReducer';
 
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
     BookTicketReducer:BookTicketReducer,
     LoadingReducer:LoadingReducer,
     sucessReducer:sucessReducer,
+    InfoUserReducer:InfoUserReducer,
 });
 
 export const store = createStore(rootReducer,applyMiddleware(thunk));

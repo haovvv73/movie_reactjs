@@ -14,7 +14,9 @@ export default function Header() {
     // tình trạng navbar
     const [nav, setNav] = useState("");
     // tình trạng slide bar
-    const [slidebar, setSlidebar] = useState("")
+    const [slidebar, setSlidebar] = useState("");
+    // tình trạng navbar khi width > 650
+    const [smallNav,setSmallNav] = useState("");
 
     // xét điều kiện hiển thị thôg tin
     useEffect(() => {
@@ -26,22 +28,46 @@ export default function Header() {
     useEffect(() => {
         const changeBackGround = () => {
             if (window.scrollY >= 80) {
+                // add animation
                 setNav("header__stick");
             } else {
                 setNav("");
             }
         }
-        window.addEventListener('scroll', changeBackGround)
+        window.addEventListener('scroll', changeBackGround);
+        return ()=>{
+            window.removeEventListener('scroll', changeBackGround);
+        }
     }, [])
     // hide slidebar khi width > 1000
-    useEffect(()=>{
-        const hide=()=>{
-            if(window.innerWidth >= 1000){
+    useEffect(() => {
+        const hide = () => {
+            if (window.innerWidth >= 1000) {
                 setSlidebar(false)
             }
         }
-        window.addEventListener('resize',hide);
-    },[])
+        window.addEventListener('resize', hide);
+        return ()=>{
+            window.removeEventListener('resize', hide);
+        }
+    }, [])
+
+    // khi width < 650 navbar add class header__stick
+    useEffect(() => {
+        const onSmallNav = () => {
+            if(window.innerWidth < 650){
+                // on header__stick
+                setSmallNav("header__stick");
+            }else{
+                // width > 650 off header__stick
+                setSmallNav("");
+            }
+        }
+        window.addEventListener('resize',onSmallNav);
+        return ()=>{
+            window.removeEventListener('resize', onSmallNav);
+        }
+    }, [])
 
     // hiển thị user
     const userRender = () => {
@@ -85,7 +111,7 @@ export default function Header() {
     const slideBarRender = () => {
         return <div className={`nav__slide ${slidebar}  `}>
             <div className="nav__close text-center p-3">
-                <i className="fa fa-times-circle" onClick={()=>{
+                <i className="fa fa-times-circle" onClick={() => {
                     setSlidebar(false);
                 }}></i>
             </div>
@@ -130,14 +156,14 @@ export default function Header() {
     return (
         <Fragment>
             <header className="header">
-                <nav className={`${nav} header__navbar navbar navbar-expand-lg navbar-light fixed-top`}>
+                <nav className={`${nav} ${smallNav} header__navbar navbar navbar-expand-lg navbar-light fixed-top`}>
                     <NavLink className="header__grand navbar-brand ml-5" to="/" >
                         <img className="img-fluid" src={img_logo} alt='123' />
                     </NavLink>
-                    <button className="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#a" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i className="fa fa-stream" onClick={()=>{
-                            setSlidebar("nav__slideActive")
-                        }}></i>
+                    <button className="navbar-toggler text-white bg-dark" onClick={() => {
+                        setSlidebar("nav__slideActive")
+                    }}>
+                        <i className="fa fa-stream" ></i>
                     </button>
                     <div className="header__content collapse navbar-collapse" id="navbarSupportedContent" >
                         <ul className="navbar-nav mx-auto">

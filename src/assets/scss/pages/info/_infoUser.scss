@@ -1,15 +1,13 @@
 .infoUser {
-    background-color: rgb(60, 27, 247);
     .infoUser__content {
         .infoUser__menu {
             width: 90px;
             height: 300px;
-            background-color: #ffb93d;
+            background-color: #ca333a;
             border: 4px solid white;
-            transition: 850ms;
             position: absolute;
-            top: 20%;
-            left: 18%;
+            top: 23%;
+            left: -18%;
             z-index: 1;
             .infoUser__itemsMenu {
                 list-style: none;
@@ -21,23 +19,26 @@
                     color: white;
                     background-color: transparent;
                     transition: 0.5s;
-                &:hover {
-                    transition: 0.5s;
-                    transform: scale(1.3);
+                    &:hover {
+                        transition: 0.5s;
+                        transform: scale(1.3);
+                    }
                 }
-                }
-                
             }
         }
         .infoUser__diplay {
+            width: 600px;
+            border: 4px solid #ca333a;
+            padding: 5%;
             background-color: white;
-            width: 500px;
-            height: 500px;
-            .infoUser__btnUser {
-            }
+            box-shadow: 0 2px 40px 0 rgb(0, 0, 0);
+            position: relative;
+            z-index: 2;
             .infoUser__img {
-            }
-            .infoUser__tableContent {
+                img {
+                    border-radius: 50%;
+                    border: 8px solid #ca333a;
+                }
             }
         }
     }

@@ -1,4 +1,4 @@
-import { API_DANGKY, API_DANGNHAP } from "../redux/type/API/nguoiDung/ApiNguoiDungtype";
+import { API_DANGKY, API_DANGNHAP, API_INFOUSER } from "../redux/type/API/nguoiDung/ApiNguoiDungtype";
 import { baseService } from "./baseService";
 
 class UserService extends baseService{
@@ -13,6 +13,10 @@ class UserService extends baseService{
 
     dangKy=(data)=>{
         return this.post(API_DANGKY,data)
+    }
+
+    getInfoUser=()=>{
+        return this.post(API_INFOUSER)
     }
 
 
