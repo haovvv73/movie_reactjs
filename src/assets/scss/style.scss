@@ -17,6 +17,7 @@
 @import "./layouts/header/headerCinema";
 @import "./layouts/footer";
 @import "./layouts/sucess/sucessBooking.scss";
+@import "./layouts/adminslidebar/adminslidebar";
 // page 
 // _home
 @import "./pages/home/bannerCarousel";
@@ -32,6 +33,12 @@
 @import "./pages/booking/booking";
 //_info
 @import "./pages/info/infoUser";
+//_admin
+@import "./pages/admin/dasboard";
+@import "./pages/admin/filmManage";
+@import "./pages/admin/userManage";
+@import "./pages/admin/showtimeManage";
 
 // theme
-@import ".//themes/hometemplate";
+@import "./themes/hometemplate";
+@import "./themes/admintenplate";

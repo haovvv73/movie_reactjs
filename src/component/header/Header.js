@@ -1,8 +1,12 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+// import picture
 import img_logo from '../../assets/img/logo.png';
+// import types
 import { USER_LOGIN } from '../../util/setting';
+//import libs
+import { Link } from 'react-scroll';
 
 export default function Header() {
 
@@ -16,15 +20,15 @@ export default function Header() {
     // tình trạng slide bar
     const [slidebar, setSlidebar] = useState("");
     // tình trạng navbar khi width > 650
-    const [smallNav,setSmallNav] = useState("");
+    const [smallNav, setSmallNav] = useState("");
 
-    // xét điều kiện hiển thị thôg tin
+    // xét điều kiện hiển thị user 
     useEffect(() => {
         if (localStorage.getItem(USER_LOGIN)) {
             setLogin(true);
         }
     }, [])
-    // xét điều kiện hiệu animation nav
+    // xét điều kiện hiệu animation navbar khi scroll
     useEffect(() => {
         const changeBackGround = () => {
             if (window.scrollY >= 80) {
@@ -35,11 +39,11 @@ export default function Header() {
             }
         }
         window.addEventListener('scroll', changeBackGround);
-        return ()=>{
+        return () => {
             window.removeEventListener('scroll', changeBackGround);
         }
     }, [])
-    // hide slidebar khi width > 1000
+    // hide slidebar đi khi width > 1000
     useEffect(() => {
         const hide = () => {
             if (window.innerWidth >= 1000) {
@@ -47,29 +51,28 @@ export default function Header() {
             }
         }
         window.addEventListener('resize', hide);
-        return ()=>{
+        return () => {
             window.removeEventListener('resize', hide);
         }
     }, [])
-
-    // khi width < 650 navbar add class header__stick
+    // add class mới header__stick vào navbar khi width < 600
     useEffect(() => {
         const onSmallNav = () => {
-            if(window.innerWidth < 650){
+            if (window.innerWidth < 650) {
                 // on header__stick
                 setSmallNav("header__stick");
-            }else{
+            } else {
                 // width > 650 off header__stick
                 setSmallNav("");
             }
         }
-        window.addEventListener('resize',onSmallNav);
-        return ()=>{
+        window.addEventListener('resize', onSmallNav);
+        return () => {
             window.removeEventListener('resize', onSmallNav);
         }
     }, [])
 
-    // hiển thị user
+    //  user trên header
     const userRender = () => {
         return <ul className="navbar-nav mr-5 header__user">
             <li className="nav-item dropdown mr-3 mt-2">
@@ -93,7 +96,7 @@ export default function Header() {
             </li>
         </ul>
     }
-    // khi không có user
+    // khi không có user => lựa chọn đăng nhập
     const loginRender = () => {
         return <ul className="navbar-nav mr-5">
             <li className="nav-item">
@@ -107,7 +110,7 @@ export default function Header() {
             </li>
         </ul>
     }
-    // hiển thị slide bar
+    // slide bar
     const slideBarRender = () => {
         return <div className={`nav__slide ${slidebar}  `}>
             <div className="nav__close text-center p-3">
@@ -138,16 +141,16 @@ export default function Header() {
             }
             <ul>
                 <li className="nav__slideTxt">
-                    <a className="nav-link" href="#" >Phim</a>
+                    <Link className="nav-link " to="phim" smooth={true} duration={1000}  >Phim</Link>
                 </li>
                 <li className="nav__slideTxt">
-                    <a className="nav-link" href="#">Rạp Phim</a>
+                    <Link className="nav-link " to="rapPhim" smooth={true} duration={1000}  >Rạp Phim</Link>
                 </li>
                 <li className="nav__slideTxt">
-                    <a className="nav-link" href="#">Khuyến Mãi</a>
+                    <Link className="nav-link " to="khuyenMai" smooth={true} duration={1000}  >Khuyến Mãi</Link>
                 </li>
                 <li className="nav__slideTxt">
-                    <a className="nav-link" href="#">Giới Thiệu</a>
+                    <Link className="nav-link " to="gioiThieu" smooth={true} duration={1000}  >Giới Thiệu</Link>
                 </li>
             </ul>
         </div>
@@ -161,23 +164,24 @@ export default function Header() {
                         <img className="img-fluid" src={img_logo} alt='123' />
                     </NavLink>
                     <button className="navbar-toggler text-white bg-dark" onClick={() => {
+                        //hiện slide bar
                         setSlidebar("nav__slideActive")
                     }}>
                         <i className="fa fa-stream" ></i>
                     </button>
                     <div className="header__content collapse navbar-collapse" id="navbarSupportedContent" >
                         <ul className="navbar-nav mx-auto">
-                            <li className="nav-item ">
-                                <a className="nav-link " href="#" >Phim</a>
+                            <li className="nav-item">
+                                <Link className="nav-link " to="phim" smooth={true} duration={1000}  >Phim</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link " href="#">Rạp Phim</a>
+                                <Link className="nav-link " to="rapPhim" smooth={true} duration={1000}  >Rạp Phim</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link " href="#">Khuyến Mãi</a>
+                                <Link className="nav-link " to="khuyenMai" smooth={true} duration={1000}  >Khuyến Mãi</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link " href="#">Giới Thiệu</a>
+                                <Link className="nav-link " to="gioiThieu" smooth={true} duration={1000}  >Giới Thiệu</Link>
                             </li>
                         </ul>
                         {login ? userRender() : loginRender()}

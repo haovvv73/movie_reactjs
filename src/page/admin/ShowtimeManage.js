@@ -1,0 +1,9 @@
+import React from 'react'
+
+export default function ShowtimeManage() {
+    return (
+        <div className="text-danger">
+            show time
+        </div>
+    )
+}

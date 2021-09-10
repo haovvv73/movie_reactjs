@@ -15,34 +15,34 @@ export default function HomePage() {
                     <div className="text-center m-5">
                         <img src={logo} alt="123" className="img-fluid" />
                     </div>
-                    <div className="home__items m-5">
+                    <div className="home__items m-5 text-center">
                         <h5>Introducing CGV Plus, the exclusive loyalty program that pays you back!</h5>
                         <h4>ROXY PLUS. MORE MOVIES. MORE REWARDS.</h4>
                     </div>
                 </div>
             </div>
             <div className="text-center m-5">
-                <hr style={{ width: '20%', margin: 'auto', borderTop: '3px solid black' }} />
-                <p className="tittle m-1">PHIM</p>
-                <hr style={{ width: '10%', margin: 'auto', borderTop: '3px solid black' }} />
+                <hr className="hr__head" />
+                <p className="tittle m-1 " id="phim">PHIM</p>
+                <hr className="hr__foot" />
             </div>
             <FilmList />
             <div className="text-center m-5">
-                <hr style={{ width: '23%', margin: 'auto', borderTop: '3px solid black' }} />
-                <p className="tittle m-1">RẠP PHIM</p>
-                <hr style={{ width: '17%', margin: 'auto', borderTop: '3px solid black' }} />
+                <hr className="hr__head" />
+                <p className="tittle m-1 " id="rapPhim" >RẠP PHIM</p>
+                <hr className="hr__foot" />
             </div>
             <Cinema />
             <div className="text-center m-5">
-                <hr style={{ width: '23%', margin: 'auto', borderTop: '3px solid black' }} />
-                <p className="tittle m-1">KHUYẾN MÃI</p>
-                <hr style={{ width: '17%', margin: 'auto', borderTop: '3px solid black' }} />
+                <hr className="hr__head" />
+                <p className="tittle m-1 " id="khuyenMai">KHUYẾN MÃI</p>
+                <hr className="hr__foot" />
             </div>
             <PromotionBanner />
             <div className="text-center m-5 pt-5">
-                <hr style={{ width: '23%', margin: 'auto', borderTop: '3px solid black' }} />
-                <p className="tittle m-1">GIỚI THIỆU</p>
-                <hr style={{ width: '17%', margin: 'auto', borderTop: '3px solid black' }} />
+                <hr className="hr__head" />
+                <p className="tittle m-1 " id="gioiThieu" >GIỚI THIỆU</p>
+                <hr className="hr__foot" />
             </div>
             <div className="pb-5 container">
                 <iframe width="100%" height="550" src="https://www.youtube.com/embed/e1ZSLVTZ47M" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>

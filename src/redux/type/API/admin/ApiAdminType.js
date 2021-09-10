@@ -1,0 +1,1 @@
+export const API_LISTFILMPHANTRANG = "api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP01&";

@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 // import action
 import { InfoUserAction } from '../../redux/Actions/nguoiDungAction/InfoUserAction';
 // import libs
-// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-// import 'react-tabs/style/react-tabs.css';
 import { history } from '../../App';
 import moment from 'moment';
 import _ from 'lodash';
@@ -25,13 +23,25 @@ export default function InfoUser() {
     // trạng thái hiển thị thông tin người dùng HOẶC lịch sử đặt vé
     const [changeDisplay, setChangeDisplay] = useState(true);
 
+    // trạng thái nút menu và menu
+    const [menu, setMenu] = useState("");
+    const [btnMenu, setBtnMenu] = useState(false);
+
+    useEffect(() => {
+        if (btnMenu) {
+            setMenu("infoUser__menuGoIn");
+        } else {
+            setMenu("");
+        }
+    }, [btnMenu])
+
     // hiển thị thông tin
     const infoRender = () => {
-        return <div className="infoUser__diplay">
+        return <div className="infoUser__diplay ">
             <div className="infoUser__img text-center">
                 <img src="https://i.pravatar.cc/150" alt="123" />
             </div>
-            <div className="infoUser__tableContent mt-4">
+            <div className="infoUser__tableContent ">
                 <p className="text-danger">Thông tin</p>
                 <table className="table">
                     <tbody>
@@ -56,13 +66,12 @@ export default function InfoUser() {
             </div>
         </div>
     }
-
     // hiển thị lịch sử đạt vé 
     const historyBooked = () => {
-        return <div className="infoUser__diplay">
-
-            <div className="infoUser__tableContent mt-4">
-                <p className="text-danger">lịch sử đặt vé</p>
+        return <div className="infoUser__diplay ">
+            <div className="infoUser__tableContent ">
+                <p className="text-white">...</p>
+                <p className="text-danger mt-3">lịch sử đặt vé</p>
                 <table className="table">
                     <thead>
                         <tr>
@@ -74,7 +83,7 @@ export default function InfoUser() {
                     </thead>
                     <tbody>
                         {thongTinDatVe.slice(-5).map((ve, index) => {
-                            return <tr key={index}>
+                            return <tr key={index} className="flex-wrap">
                                 <th scope="row"><i className="fa fa-ticket-alt"></i></th>
                                 <td>{ve.tenPhim}</td>
                                 <td>{_.size(ve.danhSachGhe)}</td>
@@ -87,32 +96,22 @@ export default function InfoUser() {
         </div>
     }
 
-
-    // <div className="infoUser__tableContent mt-4">
-    //     <Tabs>
-    //         <TabList>
-    //             <Tab>Title 1</Tab>
-    //             <Tab>Title 2</Tab>
-    //         </TabList>
-
-    //         <TabPanel>
-    //             <h2>Any content 1</h2>
-    //         </TabPanel>
-    //         <TabPanel>
-    //             <h2>Any content 2</h2>
-    //         </TabPanel>
-    //     </Tabs>
-    // </div>
-
-
     // xuống 850px là cần réponsive
     return (
-        <div className="infoUser text-dark mt-5 d-flex justify-content-center">
-            <div className="infoUser__content position-relative">
+        <div className="infoUser text-dark mt-5">
+            <div className="infoUser__content position-relative container">
                 {/* content info */}
                 {changeDisplay ? infoRender() : historyBooked()}
                 {/* menu info */}
-                <div className="infoUser__menu d-flex justify-content-center align-items-center">
+                <div className="infoUser__btnMenu">
+                    <button onClick={() => {
+                        setBtnMenu(prev => !prev)
+                    }}>
+                        <i className="fa fa-exchange-alt"></i>
+                    </button>
+                </div>
+
+                <div className={`infoUser__menu ${menu} d-flex justify-content-center align-items-center`}>
                     <ul>
                         <li className="infoUser__itemsMenu">
                             <button data-toggle="tooltip" data-placement="left" title="thông tin" onClick={

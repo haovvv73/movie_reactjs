@@ -21,7 +21,8 @@ export const InfoTemp = (props) => {
         backgroundPosition:'center',
         backgroundRepeat:'no-repeat',
         backgroundSize:'cover',
-        padding:'10%',
+        paddingTop:'10%',
+        paddingBottom:'10%',
     }
 
     return <Route {...restProps} render={(propsRoute) => {

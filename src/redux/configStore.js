@@ -1,5 +1,6 @@
 import {applyMiddleware, combineReducers, createStore} from 'redux';
 import thunk from 'redux-thunk';
+import { AdminReducer } from './Reducers/adminReducer/AdminReducer';
 import { BannerCarouselReducer } from './Reducers/BannerCarouselReducer';
 import { CinemaReducer } from './Reducers/CinemaReducer';
 import { BookTicketReducer } from './Reducers/datVeReducer/BookTicketReducer';
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
     LoadingReducer:LoadingReducer,
     sucessReducer:sucessReducer,
     InfoUserReducer:InfoUserReducer,
+    AdminReducer:AdminReducer,
 });
 
 export const store = createStore(rootReducer,applyMiddleware(thunk));

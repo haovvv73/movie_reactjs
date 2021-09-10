@@ -12,10 +12,15 @@ import { BookingTemp } from './template/bookingTemplate/BookingTemp';
 import BookTicket from './page/booking/BookTicket';
 import Loading from './component/loading/Loading';
 import { AdminTemp } from './template/adminTemplate/AdminTemplate';
-import Admin from './page/admin/Admin';
+
 import Bookingsucess from './component/sucess/Bookingsucess';
 import InfoUser from './page/infoUser/InfoUser';
 import { InfoTemp } from './template/userTemplate/InfoUserTemplate';
+import ScrollToTop from './component/autoScrollToTop/ScrollToTop';
+import Dasboard from './page/admin/Dasboard';
+import UserManage from './page/admin/UserManage';
+import FilmManage from './page/admin/FilmManage';
+import ShowtimeManage from './page/admin/ShowtimeManage';
 
 
 export const history = createBrowserHistory();
@@ -23,6 +28,7 @@ export const history = createBrowserHistory();
 function App() {
   return (
     <Router history={history}>
+      <ScrollToTop/>
       <Loading/>
       <Bookingsucess/>
       <Switch>
@@ -32,7 +38,10 @@ function App() {
         <UserTemp path="/register" exact Component={Register}/>
         <InfoTemp path="/info" exact Component={InfoUser}/>
         <BookingTemp path="/booking/:id" exact Component={BookTicket}/>
-        <AdminTemp path="/admin" exact Component={Admin} />
+        <AdminTemp path="/admin" exact Component={Dasboard} />
+        <AdminTemp path="/userManage" exact Component={UserManage} />
+        <AdminTemp path="/filmManage" exact Component={FilmManage} />
+        <AdminTemp path="/showtimeManage" exact Component={ShowtimeManage}/>
       </Switch>
     </Router>
   );
