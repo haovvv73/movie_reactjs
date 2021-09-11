@@ -1,3 +1,4 @@
+import React from 'react'
 import { Fragment } from "react";
 import { Redirect, Route } from "react-router-dom";
 import HeaderCinema from "../../component/header/headerCinema/HeaderCinema";

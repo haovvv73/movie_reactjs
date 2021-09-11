@@ -1,4 +1,5 @@
 
+import React from 'react';
 import './assets/scss/style.scss';
 import {createBrowserHistory} from 'history';
 import { Router, Switch} from 'react-router-dom';

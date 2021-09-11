@@ -1,3 +1,4 @@
+import React from 'react'
 import { Fragment } from "react";
 import { Route } from "react-router-dom";
 import Header from "../../component/header/Header";
@@ -16,7 +17,6 @@ export const HomeTemp = (props)=>{
             <Component {...propsRoute} />
 
             <Footer/>
-
         </Fragment>
     }}/>
 

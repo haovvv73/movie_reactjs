@@ -82,7 +82,6 @@ export const XoaPhimAction = (maPhim)=>{
             dispatch(ListFilmPhanTrangAction())
 
         }catch(error){
-            console.log('loi', error.response?.data);
         }
     }
 }
