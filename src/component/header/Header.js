@@ -103,7 +103,7 @@ export default function Header() {
                 <NavLink to="/login" className="nav-link" >Đăng Nhập </NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link text-white">/</a>
+                <span className="nav-link text-white" >/</span>
             </li>
             <li className="nav-item">
                 <NavLink to="/register" className="nav-link" >Đăng Ký</NavLink>

@@ -1,10 +1,13 @@
 import { Fragment } from "react";
+import { useDispatch } from "react-redux";
 import { Redirect, Route } from "react-router";
 import { NavLink } from "react-router-dom";
 import AdminSlidebar from "../../component/Slidebar/AdminSlidebar";
+import { ListFilmPhanTrangAction } from "../../redux/Actions/adminAction/AdminAction";
 import { USER_LOGIN } from "../../util/setting";
 
 export const AdminTemp = (props) => {
+    const dispatch = useDispatch();
 
     // chưa đăng nhập đá về home
     if (!localStorage.getItem(USER_LOGIN)) {
@@ -26,8 +29,13 @@ export const AdminTemp = (props) => {
                             Bootstrap
                         </NavLink>
                         <form className="form-inline">
-                            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-primary my-2 my-sm-0" >Search</button>
+                            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={e => {
+                                let param = 'soTrang=1&soPhanTuTrenTrang=5';
+                                let txtPhim = e.target.value;
+                                dispatch(ListFilmPhanTrangAction(param, txtPhim));
+                            }} />
+
+                            <i className="fa fa-search mx-3 text-dark"></i>
                         </form>
                     </nav>
                     <div className="p-4 " >

@@ -5,10 +5,6 @@ import { baseService } from "./baseService"
 
 class HomeService extends baseService{
 
-    constructor(){
-        super();
-    }
-
     getPictureBanner=()=>{
         return this.get(API_BANNER);
     }

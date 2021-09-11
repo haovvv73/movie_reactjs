@@ -31,7 +31,7 @@ export default function BookTiket(props) {
         dispatch({
             type: DAT_VE_HOAN_TAT,
         })
-    }, [])
+    },[])
     // responsive bill
     useEffect(() => {
         let handSize = () => {

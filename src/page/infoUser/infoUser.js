@@ -24,16 +24,8 @@ export default function InfoUser() {
     const [changeDisplay, setChangeDisplay] = useState(true);
 
     // trạng thái nút menu và menu
-    const [menu, setMenu] = useState("");
+    
     const [btnMenu, setBtnMenu] = useState(false);
-
-    useEffect(() => {
-        if (btnMenu) {
-            setMenu("infoUser__menuGoIn");
-        } else {
-            setMenu("");
-        }
-    }, [btnMenu])
 
     // hiển thị thông tin
     const infoRender = () => {
@@ -111,7 +103,7 @@ export default function InfoUser() {
                     </button>
                 </div>
 
-                <div className={`infoUser__menu ${menu} d-flex justify-content-center align-items-center`}>
+                <div className={`infoUser__menu ${btnMenu ? "infoUser__menuGoIn" : ""} d-flex justify-content-center align-items-center`}>
                     <ul>
                         <li className="infoUser__itemsMenu">
                             <button data-toggle="tooltip" data-placement="left" title="thông tin" onClick={

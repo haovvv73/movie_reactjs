@@ -27,16 +27,16 @@ export default function Footer() {
                     <div className="col-6 col-lg-3">
                         <div className="footer__item footer__span">
                             <h2>Quick Links</h2>
-                            <a href="#">
+                            <a href="https://www.facebook.com/votrangiahao">
                                 <p>Home</p>
                             </a>
-                            <a href="#">
+                            <a href="https://www.facebook.com/votrangiahao">
                                 <p>Courses</p>
                             </a>
-                            <a href="#">
+                            <a href="https://www.facebook.com/votrangiahao">
                                 <p>Schedule</p>
                             </a>
-                            <a href="#">
+                            <a href="https://www.facebook.com/votrangiahao">
                                 <p>Blog</p>
                             </a>
                         </div>
@@ -44,16 +44,16 @@ export default function Footer() {
                     <div className="col-6 col-lg-3">
                         <div className="footer__item footer__span">
                             <h2>About</h2>
-                            <a href="#">
+                            <a href="https://www.facebook.com/votrangiahao">
                                 <p>About Us</p>
                             </a>
-                            <a href="#">
+                            <a href="https://www.facebook.com/votrangiahao">
                                 <p>Event</p>
                             </a>
-                            <a href="#">
+                            <a href="https://www.facebook.com/votrangiahao">
                                 <p>Get Quote</p>
                             </a>
-                            <a href="#">
+                            <a href="https://www.facebook.com/votrangiahao">
                                 <p>Contact</p>
                             </a>
                         </div>

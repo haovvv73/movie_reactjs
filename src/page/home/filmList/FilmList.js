@@ -44,7 +44,7 @@ export default function FilmList(props) {
 
 
     const renderListPhim = () => {
-        return arrListPhim.slice(0, 16).map((phim, index) => {
+        return arrListPhim.slice(0,16).map((phim, index) => {
             return <div key={index} className="filmList__items">
                 {/* hình ảnh phim */}
                 <div className="filmList__img">

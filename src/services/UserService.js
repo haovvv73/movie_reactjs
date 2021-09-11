@@ -3,10 +3,6 @@ import { baseService } from "./baseService";
 
 class UserService extends baseService{
 
-    constructor(){
-        super();
-    }
-
     dangNhap=(data)=>{
         return this.post(API_DANGNHAP,data)
     }

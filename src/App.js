@@ -18,9 +18,12 @@ import InfoUser from './page/infoUser/InfoUser';
 import { InfoTemp } from './template/userTemplate/InfoUserTemplate';
 import ScrollToTop from './component/autoScrollToTop/ScrollToTop';
 import Dasboard from './page/admin/Dasboard';
-import UserManage from './page/admin/UserManage';
-import FilmManage from './page/admin/FilmManage';
-import ShowtimeManage from './page/admin/ShowtimeManage';
+import UserManage from './page/admin/userManage/UserManage';
+import FilmManage from './page/admin/filmManage/FilmManage';
+import ShowtimeManage from './page/admin/filmManage/ShowtimeManage';
+import AddUser from './page/admin/userManage/AddUser';
+import EditFilm from './page/admin/filmManage/EditFilm';
+
 
 
 export const history = createBrowserHistory();
@@ -32,16 +35,24 @@ function App() {
       <Loading/>
       <Bookingsucess/>
       <Switch>
+        {/* home */}
         <HomeTemp path="/" exact Component={HomePage} />
         <HomeTemp path="/detail/:id" exact Component={FilmDetail} />
+        {/* user */}
         <UserTemp path="/login" exact Component={Login} />
         <UserTemp path="/register" exact Component={Register}/>
         <InfoTemp path="/info" exact Component={InfoUser}/>
+        {/* booking */}
         <BookingTemp path="/booking/:id" exact Component={BookTicket}/>
+        {/* admin */}
         <AdminTemp path="/admin" exact Component={Dasboard} />
         <AdminTemp path="/userManage" exact Component={UserManage} />
         <AdminTemp path="/filmManage" exact Component={FilmManage} />
         <AdminTemp path="/showtimeManage" exact Component={ShowtimeManage}/>
+
+        <AdminTemp path="/userManage/addUser" exact Component={AddUser}/>
+        <AdminTemp path="/filmManage/addFilm" exact Component={AddUser}/>
+        <AdminTemp path="/filmManage/editFilm/:id" exact Component={EditFilm}/>
       </Switch>
     </Router>
   );

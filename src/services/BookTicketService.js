@@ -3,10 +3,6 @@ import { baseService } from "./baseService";
 
 class BookTicketService extends baseService{
 
-    constructor(){
-        super();
-    }
-
     getDataTicket = (id)=>{
         return this.get(`${API_DATATICKET}=${id}`)
     }
