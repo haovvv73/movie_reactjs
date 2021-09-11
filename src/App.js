@@ -14,7 +14,7 @@ import Loading from './component/loading/Loading';
 import { AdminTemp } from './template/adminTemplate/AdminTemplate';
 
 import Bookingsucess from './component/sucess/Bookingsucess';
-import InfoUser from './page/infoUser/InfoUser';
+import InfoUser from './page/infoUser/infoUser';
 import { InfoTemp } from './template/userTemplate/InfoUserTemplate';
 import ScrollToTop from './component/autoScrollToTop/ScrollToTop';
 import Dasboard from './page/admin/Dasboard';
