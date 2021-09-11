@@ -18,6 +18,7 @@ export default function InfoUser() {
 
     //dữ liệu thông tin người dùng chi tiết
     const { dataInfoUser } = useSelector(state => state.InfoUserReducer);
+    // boc phan tu ra
     const { hoTen, email, taiKhoan, matKhau, thongTinDatVe } = dataInfoUser;
 
     // trạng thái hiển thị thông tin người dùng HOẶC lịch sử đặt vé
