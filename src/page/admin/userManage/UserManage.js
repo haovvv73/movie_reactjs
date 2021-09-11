@@ -40,7 +40,6 @@ export default function UserManage() {
         })
     }
 
-
     const contentRender = () => {
         return items.map((user, index) => {
             return <tr key={index}>

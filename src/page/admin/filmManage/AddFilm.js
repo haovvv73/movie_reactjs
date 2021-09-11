@@ -65,82 +65,72 @@ export default function AddFilm() {
 
     }
 
-
     return (
         <div className="container text-dark">
-            <h2 className="text-primary mb-5">thêm phim mới</h2>
+            <h2 className="text-primary mb-4 text-center">thêm phim mới</h2>
             <form onSubmit={formik.handleSubmit}>
                 <div className="row">
-                    
                     <div className="col">
-                        <div className="form-group">
-                            <label >tên phim</label>
-                            <input type="text" className="form-control" name="tenPhim" onChange={formik.handleChange} />
-                            {formik.errors.tenPhim && formik.touched.tenPhim && <small className="text-danger"> {formik.errors.tenPhim} </small>}
+                        <div className="row">
+                            <div className="form-group col">
+                                <label >tên phim</label>
+                                <input type="text" className="form-control" name="tenPhim" onChange={formik.handleChange} />
+                                {formik.errors.tenPhim && formik.touched.tenPhim && <small className="text-danger"> {formik.errors.tenPhim} </small>}
+                            </div>
+                            <div className="form-group col">
+                                <label >trailer</label>
+                                <input type="text" className="form-control" name="trailer" onChange={formik.handleChange} />
+                                {formik.errors.trailer && formik.touched.trailer && <small className="text-danger"> {formik.errors.trailer} </small>}
+                            </div>
                         </div>
-                        <div className="form-group">
-                            <label >trailer</label>
-                            <input type="text" className="form-control" name="trailer" onChange={formik.handleChange} />
-                            {formik.errors.trailer && formik.touched.trailer && <small className="text-danger"> {formik.errors.trailer} </small>}
+
+                        <div className="row">
+                            <div className="form-group col">
+                                <label >ngày khởi chiếu</label>
+                                <input type="text" className="form-control" format={"DD/MM/YYYY"} name="ngayKhoiChieu" onChange={formik.handleChange} />
+                                {formik.errors.ngayKhoiChieu && formik.touched.ngayKhoiChieu && <small className="text-danger"> {formik.errors.ngayKhoiChieu} </small>}
+                            </div>
+                            <div className="form-group col ">
+                                <label >số sao</label>
+                                <div className="input-group">
+                                    <input type="number" className="form-control" name="danhGia" onChange={formik.handleChange} />
+                                    <div className="input-group-append">
+                                        <span className="input-group-text"><i className="fa fa-star"></i></span>
+                                    </div>
+                                </div>
+                                {formik.errors.danhGia && formik.touched.danhGia && <small className="text-danger"> {formik.errors.danhGia} </small>}
+                            </div>
                         </div>
+
                         <div className="form-group">
                             <label >mô tả</label>
                             <input type="text" className="form-control" name="moTa" onChange={formik.handleChange} />
                             {formik.errors.moTa && formik.touched.moTa && <small className="text-danger"> {formik.errors.moTa} </small>}
                         </div>
-                        <div className="form-group">
-                            <label >ngày khởi chiếu</label>
-                            <input type="text" className="form-control" format={"DD/MM/YYYY"} name="ngayKhoiChieu" onChange={formik.handleChange} />
-                            {formik.errors.ngayKhoiChieu && formik.touched.ngayKhoiChieu && <small className="text-danger"> {formik.errors.ngayKhoiChieu} </small>}
-                        </div>
-                        <div className="form-group mt-4">
-                            <label >số sao</label>
-                            <div className="input-group">
-                                <input type="number" className="form-control" name="danhGia" onChange={formik.handleChange} />
-                                <div className="input-group-append">
-                                    <span className="input-group-text"><i className="fa fa-star"></i></span>
-                                </div>
-                            </div>
-                            {formik.errors.danhGia && formik.touched.danhGia && <small className="text-danger"> {formik.errors.danhGia} </small>}
-                        </div>
-                    </div>
-                    
-                    <div className="col">
-                    <h2 className="text-center mb-5">tình trạng</h2>
 
-                        <div className="form-group row">
-                            <div className="input-group col">
-                                <div className="input-group-prepend mr-3">
-                                    <div className="input-group-text">
-                                        <input type="checkbox" name="dangChieu" onChange={formik.handleChange} />
-                                    </div>
-                                </div>
-                                <label >đang chiếu</label>
+                        <div className="form-group mt-4 row">
+                            <div className="input-group col-2">
+                                <label className="mr-3">đang chiếu</label>
+                                <input type="checkbox" name="dangChieu" onChange={formik.handleChange} />
                             </div>
-                            <div className="input-group col">
-                                <div className="input-group-prepend mr-3">
-                                    <div className="input-group-text">
-                                        <input type="checkbox" name="sapChieu" onChange={formik.handleChange} />
-                                    </div>
-                                </div>
-                                <label >sắp chiếu</label>
+                            <div className="input-group col-2">
+                                <label className="mr-3">sắp chiếu</label>
+                                <input type="checkbox" name="sapChieu" onChange={formik.handleChange} />
                             </div>
-                            <div className="input-group col">
-                                <div className="input-group-prepend mr-3">
-                                    <div className="input-group-text">
-                                        <input type="checkbox" name="hot" onChange={formik.handleChange} />
-                                    </div>
-                                </div>
-                                <label >bom tấn</label>
+                            <div className="input-group col-2">
+                                <label className="mr-3">bom tấn</label>
+                                <input type="checkbox" name="hot" onChange={formik.handleChange} />
                             </div>
                         </div>
 
-                        <div className="form-group mt-5">
-
+                        <div className="form-group mt-3 mb-4">
                             <label >hình ảnh</label>
                             <div >
                                 <input type="file" onChange={handleChangeFile} accept="image/png, image/jpeg, image/jpg" />
-                                <img src={imgInp} style={{ width: "110px", height: "120px" }} alt="123" />
+                                
+                                <div style={{ backgroundColor: "gray", width:"130px", height:"150px" }} className="mt-2">
+                                    <img src={imgInp} style={{ width: "130px", height: "150px" }} alt="123"  />
+                                </div>
                             </div>
                             {formik.errors.hinhAnh && formik.touched.hinhAnh && <small className="text-danger"> {formik.errors.hinhAnh} </small>}
                         </div>

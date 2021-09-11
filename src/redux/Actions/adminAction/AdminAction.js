@@ -1,6 +1,7 @@
 import { adminService } from "../../../services/AdminService";
 import { SET_LISTFILMPHANTRANG, SET_LISTUSERPHANTRANG, SET_PHIMCAPNHAP } from "../../type/case/admin/AdminType";
 
+// lấy phim từ data 
 export const ListFilmPhanTrangAction = (param,textPhim)=>{
     return async (dispatch)=>{
         try{
@@ -17,6 +18,7 @@ export const ListFilmPhanTrangAction = (param,textPhim)=>{
     }
 }
 
+// lấy người dùng từ data
 export const ListUserPhanTrangAction = (param)=>{
     return async (dispatch)=>{
         try{
@@ -33,6 +35,7 @@ export const ListUserPhanTrangAction = (param)=>{
     }
 }
 
+// đưa phim lên data
 export const ThemPhimVaoDanhSachAction = (data)=>{
     return async ()=>{
         try{
@@ -45,6 +48,7 @@ export const ThemPhimVaoDanhSachAction = (data)=>{
     }
 }
 
+// lấy phim cập nhập từ data
 export const GetPhimCapNhapAction = (id)=>{
     return async (dispatch)=>{
         try{
@@ -60,6 +64,7 @@ export const GetPhimCapNhapAction = (id)=>{
     }
 }
 
+// cập nhập phim lên data
 export const CapNhapPhimAction = (data)=>{
     return async ()=>{
         try{
@@ -72,6 +77,7 @@ export const CapNhapPhimAction = (data)=>{
     }
 }
 
+// xóa phim trên data
 export const XoaPhimAction = (maPhim)=>{
     return async (dispatch)=>{
         try{

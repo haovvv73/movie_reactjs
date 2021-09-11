@@ -6,14 +6,14 @@ const stateDefault = {
         count: "",
         totalPages: "",
         totalCount: "",
-        items: [],
+        items:[],
     },
     listUserPhanTrang:{
         currentPage: "",
         count: "",
         totalPages: "",
         totalCount: "",
-        items: [],
+        items:[],
     },
     phimCapNhap:{
         tenPhim: "",
