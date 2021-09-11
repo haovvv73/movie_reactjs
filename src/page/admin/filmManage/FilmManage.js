@@ -43,7 +43,7 @@ export default function FilmManage() {
     }
 
     const contentRender = () => {
-        return items?.map((film, index) => {
+        return items.map((film, index) => {
             return <tr key={index}>
                 <td>{film.maPhim}</td>
                 <td> <img src={film.hinhAnh} alt="123" className="img-fluid" style={{ width: "100px", height: "100px" }} /> </td>

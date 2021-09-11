@@ -42,7 +42,6 @@ function App() {
         <UserTemp path="/login" exact Component={Login} />
         <UserTemp path="/register" exact Component={Register}/>
         <InfoTemp path="/info" exact Component={InfoUser}/>
-        
         {/* booking */}
         <BookingTemp path="/booking/:id" exact Component={BookTicket}/>
         {/* admin */}

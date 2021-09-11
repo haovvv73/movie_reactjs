@@ -12,14 +12,14 @@ export default function FilmDetail_cinema(props) {
 
     // hàm hiển thị hệ thống các rạp
     const renderHeThongRap = () => {
-        return data.heThongRapChieu?.map((heThongRap, index) => {
+        return data.heThongRapChieu.map((heThongRap, index) => {
             return <Tab key={index}> <img src={heThongRap.logo} alt="123" className="img-fluid" /> </Tab>
         })
     }
 
     // hàm hiển thị địa chỉ và suất chiếu phim
     const renderDanhSachPhim = () => {
-        return data.heThongRapChieu?.map((rap, index) => {
+        return data.heThongRapChieu.map((rap, index) => {
             return <TabPanel key={index}>
                 <Tabs>
                     <div className="row mx-0">

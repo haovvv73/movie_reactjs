@@ -89,7 +89,7 @@ export default function FilmList(props) {
                         dispatch({
                             type: SET_PHIMSHOWED,
                         })
-                    }}>đang chiếu</button>
+                    }}>Đang chiếu</button>
                     <button className={offShow} onClick={() => {
                         // on nút sắp chiếu
                         setOffShow("btn__active");
@@ -98,7 +98,7 @@ export default function FilmList(props) {
                         dispatch({
                             type: SET_PHIMSHOWING,
                         })
-                    }}>sắp chiếu</button>
+                    }}>Sắp chiếu</button>
                     <hr style={{ borderTop: '1px solid rgba(0, 0, 0, 0.4)' }} />
                 </div>
                 {/* danh sách phim */}

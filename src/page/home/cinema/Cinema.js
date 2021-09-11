@@ -25,7 +25,6 @@ export default function Cinema(props) {
         return dataCinema.map((heThongRap, index) => {
             return <Tab key={index}> <img src={heThongRap.logo} alt="123" className="img-fluid" /> </Tab>
         })
-
     }
 
     // hàm hiển thị địa điểm và suất chiếu phim

@@ -42,7 +42,7 @@ export default function UserManage() {
 
 
     const contentRender = () => {
-        return items?.map((user, index) => {
+        return items.map((user, index) => {
             return <tr key={index}>
                 <td>{user.taiKhoan}</td>
                 <td>{user.matKhau}</td>

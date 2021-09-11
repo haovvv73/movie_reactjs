@@ -27,7 +27,6 @@ const stateDefault = {
         maNhom: 'GP01',
         hinhAnh: null,
     }
-
 }
 
 export const AdminReducer = (state = stateDefault, action) => {
