@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { adminService } from '../../../services/AdminService';
 import { useFormik } from 'formik';
 import moment from 'moment';
+import * as yup from "yup";
 
 export default function ShowtimeManage(props) {
 
@@ -14,16 +15,18 @@ export default function ShowtimeManage(props) {
             maRap:'',
             giaVe: '',
         },
+        validationSchema: yup.object().shape({
+            ngayChieuGioChieu: yup.string().required('không bỏ trống'),
+            giaVe: yup.string().required('không bỏ trống').matches(/^[0-9]+$/, '150000 đ - 200000 đ'),
+        }),
         onSubmit: values => {
             console.log('ket qua',values);
 
             const postTaoLichChieu = async (data)=>{
                 try{
-                    const result = await adminService.taoLichChieu(data)
-
-
+                    await adminService.taoLichChieu(data)
+                    alert("ok tạo thành công")
                 }catch(error){
-                    console.log("loi", error.response.data);
                 }
             }
             postTaoLichChieu(values);
@@ -86,7 +89,8 @@ export default function ShowtimeManage(props) {
     }
 
     const handleNgayChieu = (e)=>{
-        let ngayChieu = moment(e.target.value).format("DD/MM/YYYY hh:mm:ss")
+        let ngayChieu = moment(e.target.value).format("DD/MM/YYYY hh:mm:ss");
+        formik.setFieldValue('ngayChieuGioChieu',ngayChieu)
     }
 
     return (
@@ -114,11 +118,13 @@ export default function ShowtimeManage(props) {
                             <div className="form-group col">
                                 <label >Ngày chiếu và Giờ chiếu</label>
                                 <input type="datetime-local" className="form-control" onChange={handleNgayChieu} />
+                                {formik.errors.ngayChieuGioChieu && <small className="text-danger">{formik.errors.ngayChieuGioChieu}</small>}
                             </div>
 
                             <div className="form-group col">
                                 <label >Giá Vé</label>
                                 <input type="text" className="form-control" name="giaVe"  onChange={formik.handleChange} />
+                                {formik.errors.giaVe && <small className="text-danger">{formik.errors.giaVe}</small>}
                             </div>
                         </div>
                         <button type="submit" className="btn btn-primary container">thêm lịch chiếu</button>
