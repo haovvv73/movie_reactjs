@@ -53,21 +53,26 @@ export default function FilmManage() {
                 <td>
                     {/* edit film ở đây */}
                     <NavLink to={`/filmManage/editFilm/${film.maPhim}`}>
-                        <button className="btn btn-outline-info mr-2">
+                        <button className="btn btn-outline-info ">
                             <i className="fa fa-pen"></i>
                         </button>
                     </NavLink>
                     {/* xóa phim ở đây */}
-                    <button className="btn btn-outline-danger" onClick={()=>{
-                        if(window.confirm("có muốn xóa phim không", film.tenPhim)){
+                    <button className="btn btn-outline-danger mx-2" onClick={() => {
+                        if (window.confirm("có muốn xóa phim không", film.tenPhim)) {
                             // chức năng xóa phim => có => xóa
                             dispatch(XoaPhimAction(film.maPhim))
-                        }else{
+                        } else {
                             //ko => do nothing
                         }
                     }} >
                         <i className="fa fa-trash"></i>
                     </button>
+                    <NavLink to={`/showTimeManage/${film.maPhim}`}>
+                        <button className="btn btn-outline-info">
+                            <i className="fa fa-calendar-plus"></i>
+                        </button>
+                    </NavLink>
                 </td>
             </tr>
         })

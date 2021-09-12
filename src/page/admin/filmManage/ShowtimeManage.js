@@ -1,68 +1,126 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { adminService } from '../../../services/AdminService';
+import { useFormik } from 'formik';
+import moment from 'moment';
 
-export default function ShowtimeManage() {
+export default function ShowtimeManage(props) {
+
+    let { id } = props.match.params;
+
+    const formik = useFormik({
+        initialValues: {
+            maPhim: id,
+            ngayChieuGioChieu: '',
+            maRap:'',
+            giaVe: '',
+        },
+        onSubmit: values => {
+            console.log('ket qua',values);
+
+            const postTaoLichChieu = async (data)=>{
+                try{
+                    const result = await adminService.taoLichChieu(data)
 
 
+                }catch(error){
+                    console.log("loi", error.response.data);
+                }
+            }
+            postTaoLichChieu(values);
+        },
+    });
 
+    // data he thong rap
+    const [state, setState] = useState({
+        heThongRap: [],
+        cumRap: [],
+    })
+    const { heThongRap, cumRap } = state;
 
+    // goi api lay data he thong rap
+    useEffect(() => {
+        const goiDataHeThongRap = async () => {
+            try {
+                const result = await adminService.heThongRap();
+                setState({
+                    ...state,
+                    heThongRap: result.data.content,
+                })
 
+            } catch (error) {
+            }
+        }
+        goiDataHeThongRap();
+    }, [])
 
+    // goi api lay data cum rap
+    const handleHeThongRap = (e) => {
+        const goiDataCumRap = async (maHeThongRap) => {
+            try {
+                const result = await adminService.cumRap(maHeThongRap);
 
+                setState({
+                    ...state,
+                    cumRap: result.data.content,
+                })
 
+            } catch (error) {
+            }
+        }
+        let maHeThongRap = e.target.value;
+        goiDataCumRap(maHeThongRap)
+    }
+
+    // hiển thị hệ thống rạp
+    const heThongRapRender = () => {
+        return heThongRap.map((heThong, index) => {
+            return <option value={heThong.maHeThongRap} key={index} > {heThong.tenHeThongRap} </option>
+        })
+    }
+
+    // hiển thị cụm rạp
+    const cumRapRender = () => {
+        return cumRap.map((cumRap, index) => {
+            return <option value={cumRap.maCumRap} key={index} > {cumRap.tenCumRap} </option>
+        })
+    }
+
+    const handleNgayChieu = (e)=>{
+        let ngayChieu = moment(e.target.value).format("DD/MM/YYYY hh:mm:ss")
+    }
 
     return (
         <div className="text-dark">
             <h2 className="text-center">Thêm lịch chiếu</h2>
-            <form>
+            <form onSubmit={formik.handleSubmit}>
                 <div className="row justify-content-center">
                     <div className="col-8">
-                        <div className="form-group">
-                            <label htmlFor="inpTenPhim">tên Phim</label>
-                            <select className="custom-select" id="inpTenPhim">
-                                <option selected>Choose...</option>
-                                <option value={1}>One</option>
-                                <option value={2}>Two</option>
-                                <option value={3}>Three</option>
-                            </select>
-                        </div>
-
                         <div className="form-group mb-3">
-
                             <label htmlFor="inpHeThongRap">Hệ Thống Rạp</label>
-
-                            <select className="custom-select" id="inpHeThongRap">
-                                <option selected>Choose...</option>
-                                <option value={1}>One</option>
-                                <option value={2}>Two</option>
-                                <option value={3}>Three</option>
+                            <select className="custom-select" id="inpHeThongRap" onChange={handleHeThongRap} >
+                                <option value={''} > chose </option>
+                                {heThongRapRender()}
                             </select>
                         </div>
 
-                        <div className="form-group mb-3">
-
-                            <label htmlFor="inpRap">Rạp</label>
-
-                            <select className="custom-select" id="inpRap">
-                                <option selected>Choose...</option>
-                                <option value={1}>One</option>
-                                <option value={2}>Two</option>
-                                <option value={3}>Three</option>
+                        <div className="form-group mb-3 ">
+                            <label htmlFor="inpRap">cụm Rạp</label>
+                            <select className="custom-select" id="inpRap" name="maRap" onChange={formik.handleChange}>
+                                {cumRapRender()}
                             </select>
                         </div>
 
                         <div className="row">
                             <div className="form-group col">
                                 <label >Ngày chiếu và Giờ chiếu</label>
-                                <input type="text" className="form-control" />
+                                <input type="datetime-local" className="form-control" onChange={handleNgayChieu} />
                             </div>
 
                             <div className="form-group col">
                                 <label >Giá Vé</label>
-                                <input type="text" className="form-control" />
+                                <input type="text" className="form-control" name="giaVe"  onChange={formik.handleChange} />
                             </div>
                         </div>
-
-
                         <button type="submit" className="btn btn-primary container">thêm lịch chiếu</button>
                     </div>
                 </div>

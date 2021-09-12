@@ -8,3 +8,9 @@ export const API_PHIMDETAIL = `api/QuanLyPhim/LayThongTinPhim?MaPhim`;
 export const API_CINEMA = `api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP01`;
 // api lịch chiếu phim
 export const API_FILM = `api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim`;
+// api he thong rap
+export const API_HETHONGRAP = "api/QuanLyRap/LayThongTinHeThongRap";
+// api cum rap
+export const API_CUMRAP = "api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=";
+// api tao lich chieu
+export const API_TAOLICHCHIEU = "api/QuanLyDatVe/TaoLichChieu";

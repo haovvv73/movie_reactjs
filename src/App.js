@@ -49,7 +49,7 @@ function App() {
         <AdminTemp path="/admin" exact Component={Dasboard} />
         <AdminTemp path="/userManage" exact Component={UserManage} />
         <AdminTemp path="/filmManage" exact Component={FilmManage} />
-        <AdminTemp path="/showtimeManage" exact Component={ShowtimeManage}/>
+        <AdminTemp path="/showtimeManage/:id" exact Component={ShowtimeManage}/>
 
         <AdminTemp path="/filmManage/addFilm" exact Component={AddFilm}/>
         <AdminTemp path="/filmManage/editFilm/:id" exact Component={EditFilm}/>

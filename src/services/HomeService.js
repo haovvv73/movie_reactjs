@@ -9,6 +9,7 @@ class HomeService extends baseService{
         return this.get(API_BANNER);
     }
 
+    // phim
     getListPhim=()=>{
         return this.get(API_LISTPHIM);
     }
@@ -17,6 +18,7 @@ class HomeService extends baseService{
         return this.get(`${API_PHIMDETAIL}=${id}`)
     }
 
+    // rạp
     getDataCinema=()=>{
         return this.get(API_CINEMA);
     }
@@ -24,7 +26,6 @@ class HomeService extends baseService{
     getPhimDetailCinema=(id)=>{
         return this.get(`${API_FILM}=${id}`);
     }
-
 
 }
 
