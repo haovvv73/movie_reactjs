@@ -9,8 +9,8 @@
 .filmList__overtxt {
     .filmList__btn {
         border: none;
-        width: 200px;
-        height: 60px;
+        width: 230px;
+        height: 70px;
         @include styleText($color-3, $fs-2, $fw-3);
         position: relative;
         background-color: white;
@@ -22,7 +22,7 @@
             left: 0;
             right: 0;
             transition: 0.3s;
-            width: 200px;
+            width: 230px;
             background-color: rgba(0, 0, 0, 0.288);
         }
     }
@@ -51,11 +51,12 @@
 .filmList {
     .btn__showing {
         button {
-            padding: 7px 22px 7px 22px;
+            padding: 10px 26px;
             border: black 1px solid;
             margin: 5px;
             background-color: transparent;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 20px;
             transition: 0.5s;
             &:hover {
                 background-color: $color-3;
@@ -66,8 +67,9 @@
         }
         .btn__active {
             background-color: $color-3;
-            border: $color-3 1px solid;
+            border: $color-3 2px solid;
             color: white;
+
         }
     }
 }

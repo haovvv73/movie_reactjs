@@ -160,7 +160,7 @@ export default function Header() {
         <Fragment>
             <header className="header">
                 <nav className={`${nav} ${smallNav} header__navbar navbar navbar-expand-lg navbar-light fixed-top`}>
-                    <NavLink className="header__grand navbar-brand ml-5" to="/" >
+                    <NavLink className="header__grand navbar-brand" to="/" >
                         <img className="img-fluid" src={img_logo} alt='123' />
                     </NavLink>
                     <button className="navbar-toggler text-white bg-dark" onClick={() => {
