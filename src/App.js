@@ -13,7 +13,6 @@ import { BookingTemp } from './template/bookingTemplate/BookingTemp';
 import BookTicket from './page/booking/BookTicket';
 import Loading from './component/loading/Loading';
 import { AdminTemp } from './template/adminTemplate/AdminTemplate';
-
 import Bookingsucess from './component/sucess/Bookingsucess';
 import InfoUser from './page/infoUser/infoUser';
 import { InfoTemp } from './template/userTemplate/InfoUserTemplate';
@@ -24,8 +23,6 @@ import FilmManage from './page/admin/filmManage/FilmManage';
 import ShowtimeManage from './page/admin/filmManage/ShowtimeManage';
 import EditFilm from './page/admin/filmManage/EditFilm';
 import AddFilm from './page/admin/filmManage/AddFilm';
-
-
 
 export const history = createBrowserHistory();
 

@@ -10,7 +10,7 @@ export default function Loading() {
             {
                 isLoading ? <div className="body__loading">
                     <div className="loading ">
-                        <span>Loading...</span>
+                        <span>Loading</span>
                     </div>
                 </div> : ''
         }

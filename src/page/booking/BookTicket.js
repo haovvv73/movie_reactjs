@@ -16,9 +16,11 @@ export default function BookTiket(props) {
 
     // mã rạp chiếu
     let { id } = props.match.params;
+
     // dữ liệu vé xem phim // dữ liệu ghế đang đặt , thuong , vip
     const { dataTicket, danhSachGheDangDat, danhSachGheDangDatThuong, danhSachGheDangDatVip } = useSelector(state => state.BookTicketReducer);
     const { danhSachGhe, thongTinPhim } = dataTicket;
+
     //dữ liệu người dùng đăng nhập
     const { loginUser } = useSelector(state => state.LoginReducer);
     // data user
@@ -31,31 +33,35 @@ export default function BookTiket(props) {
         dispatch({
             type: DAT_VE_HOAN_TAT,
         })
-    },[])
+    }, [])
     // responsive bill
     useEffect(() => {
         let handSize = () => {
             setSize(window.innerWidth)
         }
         window.addEventListener('resize', handSize);
-        return ()=>[
+        return () => [
             window.removeEventListener('resize', handSize)
         ]
     }, [])
 
-    // hiển thị thông tin 
+    // hiển thị thông tin
     const infoRender = () => {
-        return <div className="booking__info" >
-            <div className="p-5">
-                <h1 className="text-center" >{thongTinPhim.tenPhim}</h1>
-                <p className="text-secondary text-center">
-                    <i className="fa fa-map-marker-alt mr-3 text-white"></i>
-                    {thongTinPhim.tenCumRap}
-                    {/* {thongTinPhim.diaChi} */}
-                </p>
+        return <div className="booking__info"  style={{backgroundImage:`url(${thongTinPhim.hinhAnh})`}}>
+            <div className="row mx-0 align-items-center booking__infohead">
+                { size > 1100 ? <div className="booking__img col-4 text-center">
+                    <img src={thongTinPhim.hinhAnh} alt="123" />
+                </div> : null }
+                <div className="col-12 col-lg-7 ">
+                    <h1>{thongTinPhim.tenPhim}</h1>
+                    <p className="text-secondary">
+                        <i className="fa fa-map-marker-alt mr-3 text-white"></i>
+                        {thongTinPhim.tenCumRap}
+                    </p>
+                </div>
             </div>
-            <div className="row booking__infoTxt">
-                <div className="row col-12 col-lg-6 justify-content-around">
+            <div className="row mx-0 booking__infofoot  ">
+                <div className="row col-lg-8 col-12 mr-3 justify-content-around">
                     <div>
                         <p className="text-muted">tên rạp</p>
                         <p>{thongTinPhim.tenRap}</p>
@@ -69,28 +75,35 @@ export default function BookTiket(props) {
                         <p>{thongTinPhim.gioChieu}</p>
                     </div>
                 </div>
-                <div className="row col-12 col-lg-6 justify-content-around ">
-                    <div>
-                        <p className="text-secondary mb-0">ghế Thường</p>
-                        <button className="chair__nomarl" disabled></button>
+            </div>
+        </div>
+    }
+
+    // hiển thị lưu ý  
+    const noteRender = () => {
+        return <div className="booking__note mb-5" >
+            <div className="mx-5 booking__infoTxt">
+                <div className="row justify-content-between">
+                    <div className="col-lg-3 col-6 text-center">
+                        <button className="chair__nomarl booking__infobtn " disabled></button>
+                        <p className="text-secondary mt-2">Ghế Thường</p>
                     </div>
-                    <div>
-                        <p className="text-secondary mb-0">Ghế vip</p>
-                        <button className="chair__vip" disabled></button>
+                    <div className="col-lg-3 col-6 text-center">
+                        <button className="chair__vip booking__infobtn " disabled></button>
+                        <p className="text-secondary mt-2">Ghế Vip</p>
                     </div>
-                    <div>
-                        <p className="text-secondary mb-0">đã đặt</p>
-                        <button className="chair__booked" disabled></button>
+                    <div className="col-lg-3 col-6 text-center">
+                        <button className="chair__booked booking__infobtn " disabled></button>
+                        <p className="text-secondary mt-2">Ghế Đã đặt</p>
                     </div>
-                    <div>
-                        <p className="text-secondary mb-0">ghế bạn đặt</p>
-                        <button className="chair__user" disabled></button>
+                    <div className="col-lg-3 col-6 text-center">
+                        <button className="chair__user booking__infobtn " disabled></button>
+                        <p className="text-secondary mt-2">Ghế Bạn đặt</p>
                     </div>
                 </div>
             </div>
         </div>
     }
-
     // hiển thị danh sách ghế
     const seatRender = () => {
         return <div className="booking__seat pt-2 pb-5">
@@ -129,10 +142,7 @@ export default function BookTiket(props) {
     // hiển thị hóa đơn
     const billRender = () => {
         return <div className="booking__items col-3 container" >
-            <div className="booking__img">
-                <img src={thongTinPhim.hinhAnh} className="img-fluid" alt="123" />
-            </div>
-            <div className="booking__price">
+            <div className="booking__price mt-4">
                 <p className="text-muted row"> Ghế của bạn: {_.sortBy(danhSachGheDangDat, ['stt']).map((gheDat, index) => <span className="mx-2 text-white" key={index} >{gheDat.tenGhe}</span>)} </p>
                 <div className="row booking__priceItems">
                     <p>Thường</p>
@@ -174,8 +184,8 @@ export default function BookTiket(props) {
     }
     // hiển thị khi width < 950px
     const billStickRender = () => {
-        return <nav className="row fixed-bottom bg-dark" style={{ zIndex: '10' }}>
-            <button className="booking__btnpay container m-4 col-4" onClick={() => {
+        return <nav className="row fixed-bottom bg-dark justify-content-around align-items-center " style={{ zIndex: '10' }}>
+            <button className="booking__btnpay ml-3" onClick={() => {
                 const action = new TicKetModel();
                 action.maLichChieu = id;
                 action.danhSachVe = danhSachGheDangDat;
@@ -190,14 +200,18 @@ export default function BookTiket(props) {
                 }
             }}> thanh toán </button>
             <div className="col-6">
-                <div className="row pt-3">
-                    <span className="mr-5">Thường</span>
-                    <span className="mr-5">{_.size(danhSachGheDangDatThuong)}</span>
-                    <span className="mr-5">Đặc biệt</span>
-                    <span className="mr-5">{_.size(danhSachGheDangDatVip)}</span>
+                <div className="pt-1">
+                    <div>
+                        <span className="mr-5">Thường</span>
+                        <span >{_.size(danhSachGheDangDatThuong)}</span>
+                    </div>
+                    <div>
+                        <span className="mr-5">Đặc biệt</span>
+                        <span>{_.size(danhSachGheDangDatVip)}</span>
+                    </div>
                 </div>
                 <hr style={{ borderTop: '1px solid grey' }} />
-                <div className="row ">
+                <div className="row mx-0">
                     <p className="mr-4 text-danger"> Total </p>
                     <p>{danhSachGheDangDat.reduce((tongTien, ghe, index) => {
                         return tongTien += ghe.giaVe;
@@ -208,11 +222,12 @@ export default function BookTiket(props) {
     }
 
     return (
-        <div className="p-5" style={{ backgroundColor: '#1B202C' }}>
-            <div className="booking">
-                <div className="row mx-0">
+        <div style={{ backgroundColor: '#18181B', paddingBottom: '10%' }}>
+            <div className="booking ">
+                {infoRender()}
+                <div className="row mx-0 mt-5 align-items-center">
                     <div className="booking__items col-12 col-lg-9 mb-5">
-                        {infoRender()}
+                        {noteRender()}
                         {seatRender()}
                     </div>
                     {size > 950 ? billRender() : billStickRender()}

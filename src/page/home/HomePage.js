@@ -15,7 +15,7 @@ export default function HomePage() {
                     <div className="text-center m-5">
                         <img src={logo} alt="123" className="img-fluid" />
                     </div>
-                    <div className="home__items m-5 text-center">
+                    <div className="home__items mt-5 text-center">
                         <h5>Introducing CGV Plus, the exclusive loyalty program that pays you back!</h5>
                         <h4>ROXY PLUS. MORE MOVIES. MORE REWARDS.</h4>
                     </div>

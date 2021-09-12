@@ -48,12 +48,12 @@ export default function FilmDetail(props) {
                 <div className="filmDetail" style={{ backgroundImage: `url(${hinhAnh})` }}>
                     <div className="filmDetail__content d-flex justify-content-center align-items-center flex-wrap"  >
                         {/* hình ảnh phim */}
-                        <div className="filmDetail__img mt-5 ">
+                        <div className="filmDetail__img mt-5 col-lg-4 col-12 text-center">
                             <img src={hinhAnh} alt="123" />
                         </div>
                         {/* nội dung phim */}
-                        <div className="filmDetail__txt">
-                            <div className="p-5">
+                        <div className="filmDetail__txt col-lg-8 col-12">
+                            <div className="p-2">
                                 <h2 className="text-white" >{tenPhim}</h2>
                                 <p>{moTa}</p>
                                 <span><i className="fa fa-clock mr-3"></i>{moment(ngayKhoiChieu).format('DD-MM-YYYY')}</span>
