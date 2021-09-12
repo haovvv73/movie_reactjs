@@ -38,12 +38,6 @@ export default function AdminSlidebar() {
                         </li>
 
                         <li className="admin__text">
-                            <NavLink to="/showtimeManage" activeStyle={{
-                                backgroundColor:"#1a83ff",
-                            }}><i className="fa fa-hourglass-half mr-3"></i> thêm lịch chiếu </NavLink>
-                        </li>
-
-                        <li className="admin__text">
                             <NavLink to="/admin1" activeStyle={{
                                 backgroundColor:"#1a83ff",
                             }}><i className="fa fa-info-circle mr-3"></i> about </NavLink>
