@@ -109,30 +109,33 @@ export default function AddFilm() {
                         </div>
 
                         <div className="form-group mt-4 row">
-                            <div className="input-group col-2">
-                                <label className="mr-3">đang chiếu</label>
-                                <input type="checkbox" name="dangChieu" onChange={formik.handleChange} />
-                            </div>
-                            <div className="input-group col-2">
-                                <label className="mr-3">sắp chiếu</label>
-                                <input type="checkbox" name="sapChieu" onChange={formik.handleChange} />
-                            </div>
-                            <div className="input-group col-2">
-                                <label className="mr-3">bom tấn</label>
-                                <input type="checkbox" name="hot" onChange={formik.handleChange} />
-                            </div>
-                        </div>
-
-                        <div className="form-group mt-3 mb-4">
-                            <label >hình ảnh</label>
-                            <div >
-                                <input type="file" onChange={handleChangeFile} accept="image/png, image/jpeg, image/jpg" />
-                                
-                                <div style={{ backgroundColor: "gray", width:"130px", height:"150px" }} className="mt-2">
-                                    <img src={imgInp} style={{ width: "130px", height: "150px" }} alt="123"  />
+                            <div className="col">
+                                <div className="input-group my-4">
+                                    <label className="mr-3">đang chiếu</label>
+                                    <input type="checkbox" name="dangChieu" onChange={formik.handleChange} />
+                                </div>
+                                <div className="input-group my-4">
+                                    <label className="mr-3">sắp chiếu</label>
+                                    <input type="checkbox" name="sapChieu" onChange={formik.handleChange} />
+                                </div>
+                                <div className="input-group my-4">
+                                    <label className="mr-3">bom tấn</label>
+                                    <input type="checkbox" name="hot" onChange={formik.handleChange} />
                                 </div>
                             </div>
-                            {formik.errors.hinhAnh && formik.touched.hinhAnh && <small className="text-danger"> {formik.errors.hinhAnh} </small>}
+
+                            <div className="form-group col">
+                                <label >hình ảnh</label>
+                                <div >
+                                    <input type="file" onChange={handleChangeFile} accept="image/png, image/jpeg, image/jpg" />
+
+                                    <div style={{ backgroundColor: "gray", width: "130px", height: "150px" }} className="mt-2">
+                                        <img src={imgInp} style={{ width: "130px", height: "150px" }} alt="123" />
+                                    </div>
+                                </div>
+                                {formik.errors.hinhAnh && formik.touched.hinhAnh && <small className="text-danger"> {formik.errors.hinhAnh} </small>}
+                            </div>
+
                         </div>
                     </div>
                 </div>

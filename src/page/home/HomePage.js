@@ -45,7 +45,7 @@ export default function HomePage() {
                 <hr className="hr__foot" />
             </div>
             <div className="pb-5 container">
-                <iframe width="100%" height="550" src="https://www.youtube.com/embed/e1ZSLVTZ47M" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <iframe width="100%" height="550" src="https://www.youtube.com/embed/NeJ3k3bl174" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
         </div>
     )

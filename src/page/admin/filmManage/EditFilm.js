@@ -127,32 +127,34 @@ export default function EditFilm(props) {
                         </div>
 
                         <div className="row mt-4">
-                            <div className="input-group col-2">
-                                <label htmlFor="dangChieu" className="mr-3" >Đang chiếu</label>
-                                <input type="checkbox" name="dangChieu" onChange={formik.handleChange} checked={formik.values.dangChieu} value={formik.values.dangChieu} />
+                            <div className="col">
+                                <div className="input-group my-4">
+                                    <label htmlFor="dangChieu" className="mr-3" >Đang chiếu</label>
+                                    <input type="checkbox" name="dangChieu" onChange={formik.handleChange} checked={formik.values.dangChieu} value={formik.values.dangChieu} />
+                                </div>
+
+                                <div className="input-group my-4">
+                                    <label htmlFor="sapChieu" className="mr-3">Sắp chiếu</label>
+                                    <input type="checkbox" name="sapChieu" onChange={formik.handleChange} checked={formik.values.sapChieu} value={formik.values.sapChieu} />
+                                </div>
+
+                                <div className="input-group my-4">
+                                    <label htmlFor="hot" className="mr-3">Bom tấn</label>
+                                    <input type="checkbox" name="hot" onChange={formik.handleChange} checked={formik.values.hot} value={formik.values.hot} />
+                                </div>
                             </div>
 
-                            <div className="input-group col-2">
-                                <label htmlFor="sapChieu" className="mr-3">Sắp chiếu</label>
-                                <input type="checkbox" name="sapChieu" onChange={formik.handleChange} checked={formik.values.sapChieu} value={formik.values.sapChieu} />
-                            </div>
-
-                            <div className="input-group col-2">
-                                <label htmlFor="hot" className="mr-3">Bom tấn</label>
-                                <input type="checkbox" name="hot" onChange={formik.handleChange} checked={formik.values.hot} value={formik.values.hot} />
-                            </div>
-                        </div>
-
-                        <div className="form-group mt-3 mb-5">
-                            <label >hình ảnh</label>
-                            <div>
-                                <input type="file" onChange={handleChangeFile} accept="image/png, image/jpeg, image/jpg" />
-
-                                <div style={{ backgroundColor: "gray", width: "130px", height: "150px" }} className="mt-2">
-                                    <img src={imgInp ? imgInp : phimCapNhap.hinhAnh} style={{ width: "130px", height: "150px" }} alt="123" />
+                            <div className="form-group col">
+                                <label >hình ảnh</label>
+                                <div>
+                                    <input type="file" onChange={handleChangeFile} accept="image/png, image/jpeg, image/jpg" />
+                                    <div style={{ backgroundColor: "gray", width: "130px", height: "150px" }} className="mt-2">
+                                        <img src={imgInp ? imgInp : phimCapNhap.hinhAnh} style={{ width: "130px", height: "150px" }} alt="123" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <button type="button" className="btn btn-danger" onClick={() => {

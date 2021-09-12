@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import Pagnigation from '../../../component/pagnigation/Pagnigation';
 import { ListUserPhanTrangAction } from '../../../redux/Actions/adminAction/AdminAction';
 import queryString from 'query-string';
-import { NavLink } from 'react-router-dom';
 
 export default function UserManage() {
     const dispatch = useDispatch();
@@ -49,14 +48,6 @@ export default function UserManage() {
                 <td>{user.email}</td>
                 <td>{user.soDt}</td>
                 <td>{user.maLoaiNguoiDung}</td>
-                <td>
-                    <button className="btn btn-outline-info mr-1">
-                        <i className="fa fa-pen"></i>
-                    </button>
-                    <button className="btn btn-outline-danger">
-                        <i className="fa fa-trash"></i>
-                    </button>
-                </td>
             </tr>
         })
     }
@@ -64,16 +55,6 @@ export default function UserManage() {
 
     return (
         <div>
-            {/* btn thêm người dùng */}
-            <div>
-                <div className="mb-4">
-                    <NavLink to="/userManage/addUser">
-                        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#userManage">
-                            thêm người dùng
-                        </button>
-                    </NavLink>
-                </div>
-            </div>
             {/* table */}
             <table className="table">
                 <thead className="thead-light">
@@ -84,7 +65,6 @@ export default function UserManage() {
                         <th scope="col">email</th>
                         <th scope="col">số DT</th>
                         <th scope="col">loại</th>
-                        <th scope="col">hành động</th>
                     </tr>
                 </thead>
                 <tbody>

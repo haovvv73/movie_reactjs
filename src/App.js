@@ -22,7 +22,6 @@ import Dasboard from './page/admin/Dasboard';
 import UserManage from './page/admin/userManage/UserManage';
 import FilmManage from './page/admin/filmManage/FilmManage';
 import ShowtimeManage from './page/admin/filmManage/ShowtimeManage';
-import AddUser from './page/admin/userManage/AddUser';
 import EditFilm from './page/admin/filmManage/EditFilm';
 import AddFilm from './page/admin/filmManage/AddFilm';
 
@@ -52,7 +51,6 @@ function App() {
         <AdminTemp path="/filmManage" exact Component={FilmManage} />
         <AdminTemp path="/showtimeManage" exact Component={ShowtimeManage}/>
 
-        <AdminTemp path="/userManage/addUser" exact Component={AddUser}/>
         <AdminTemp path="/filmManage/addFilm" exact Component={AddFilm}/>
         <AdminTemp path="/filmManage/editFilm/:id" exact Component={EditFilm}/>
       </Switch>
