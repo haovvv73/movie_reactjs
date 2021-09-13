@@ -20,7 +20,7 @@ export default function Login(props) {
         },
         validationSchema: yup.object().shape({
             taiKhoan: yup.string().required('không được bỏ trống').min(6, 'tài khoản phải có 6 ký tự'),
-            matKhau: yup.string().required('không được bỏ trống').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,}$/, 'mật khẩu phải có 6 ký tự - viết hoa - số - ký tự đặc biệt'),
+            matKhau: yup.string().required('không được bỏ trống').min(6, 'tài khoản phải có 6 ký tự'),
         }),
         onSubmit: values => {
             // gửi dữ liệu lên database

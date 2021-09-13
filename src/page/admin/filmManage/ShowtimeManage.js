@@ -20,8 +20,6 @@ export default function ShowtimeManage(props) {
             giaVe: yup.string().required('không bỏ trống').matches(/^[0-9]+$/, '150000 đ - 200000 đ'),
         }),
         onSubmit: values => {
-            console.log('ket qua',values);
-
             const postTaoLichChieu = async (data)=>{
                 try{
                     await adminService.taoLichChieu(data)

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Fragment } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Route } from "react-router";
 import { NavLink } from "react-router-dom";
 import AdminSlidebar from "../../component/Slidebar/AdminSlidebar";
@@ -10,11 +10,16 @@ import { USER_LOGIN } from "../../util/setting";
 export const AdminTemp = (props) => {
     const dispatch = useDispatch();
 
+    const {loginUser} = useSelector( state => state.LoginReducer)
+
     // chưa đăng nhập đá về home
     if (!localStorage.getItem(USER_LOGIN)) {
         return <Redirect to="/" />
     }
     // loại người dùng != quản trị đá về home
+    if(loginUser.maLoaiNguoiDung !== "QuanTri"){
+        return <Redirect to="/" />
+    }
 
     const { Component, ...restProps } = props;
 

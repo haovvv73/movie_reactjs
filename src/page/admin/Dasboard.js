@@ -9,7 +9,7 @@ export default function Dasboard() {
                 <span className="col-6 col-lg-3 text-center m-3 admin_box d-flex align-items-center justify-content-center">
                     <NavLink to="/userManage">
                         <div>
-                            <i class="fa fa-user" style={{ fontSize: '100px' }} ></i>
+                            <i className="fa fa-user" style={{ fontSize: '100px' }} ></i>
                             <p className="mt-3">danh sách người dùng</p>
                         </div>
                     </NavLink>
@@ -18,7 +18,7 @@ export default function Dasboard() {
                 <span className="col-6 col-lg-3 text-center m-3 admin_box d-flex align-items-center justify-content-center">
                     <NavLink to="/filmManage">
                         <div>
-                            <i class="fa fa-ticket-alt" style={{ fontSize: '100px' }} ></i>
+                            <i className="fa fa-ticket-alt" style={{ fontSize: '100px' }} ></i>
                             <p className="mt-3">danh sách phim</p>
                         </div>
                     </NavLink>
@@ -27,7 +27,7 @@ export default function Dasboard() {
                 <span className="col-6 col-lg-3 text-center m-3 admin_box d-flex align-items-center justify-content-center">
                     <NavLink to="/filmManage/addFilm">
                         <div>
-                            <i class="fa fa-plus" style={{ fontSize: '100px' }} ></i>
+                            <i className="fa fa-plus" style={{ fontSize: '100px' }} ></i>
                             <p className="mt-3">thêm phim</p>
                         </div>
                     </NavLink>
