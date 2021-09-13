@@ -14,7 +14,6 @@ export const LoginAction = (data)=>{
                 history.replace("/");
             }
         }catch(error){
-            
         }
     }
 }

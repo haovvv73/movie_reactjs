@@ -34,7 +34,7 @@ export default function Cinema(props) {
                 <Tabs>
                     <div className="row mx-0">
                         {/* thông tin địa điểm */}
-                        <TabList className="cinema__contentListAddress cinema__items col-12 col-lg-4">
+                        <TabList className="cinema__contentListAddress cinema__items cinema__itemspan col-12 col-lg-4">
                             {rap.lstCumRap.map((cumRap, index) => {
                                 return <Tab className="cinema__contentAddress" key={index}>
                                     <div className="d-flex align-items-center">
@@ -48,18 +48,18 @@ export default function Cinema(props) {
                         {/* thông tin suất chiếu phim */}
                         <div className="cinema__contentListFilm cinema__items col-12 col-lg-8">
                             {rap.lstCumRap.map((cumRap, index) => {
-                                return <TabPanel key={index}>{cumRap.danhSachPhim.map((phim, index) => {
-                                    return <div key={index} className="cinema__contentFilm d-flex ">
+                                return <TabPanel key={index}>{cumRap.danhSachPhim.slice(0,9).map((phim, index) => {
+                                    return <div key={index} className="cinema__contentFilm row mx-0">
                                         {/* hinh anh phim */}
                                         <img src={phim.hinhAnh} alt="123" />
                                         {/* suất chiếu và thông tin suất chiếu */}
-                                        <div className="cinema__contentFilmtxt">
+                                        <div className="cinema__contentFilmtxt col-12 col-sm-6 col-lg-7">
                                             <h4 className="m-2">{phim.tenPhim}</h4>
                                             <small className="form-text text-muted ml-2">{cumRap.diaChi}</small>
                                             <div className="row mx-0">
                                                 {/* lựa chọn suất chiếu */}
                                                 {phim.lstLichChieuTheoPhim.slice(0,4).map((gioChieu, index) => {
-                                                return <NavLink to={`/booking/${gioChieu.maLichChieu}`}  key={index}> <p className="cinema__choosefilm p-2 m-2">
+                                                return <NavLink to={`/booking/${gioChieu.maLichChieu}`}  key={index}> <p className="cinema__choosefilm p-2 m-1">
                                                     {moment(gioChieu.ngayChieuGioChieu).format('hh:mm A')}
                                                 </p></NavLink>
                                             })}</div>

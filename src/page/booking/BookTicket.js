@@ -61,7 +61,7 @@ export default function BookTiket(props) {
                 </div>
             </div>
             <div className="row mx-0 booking__infofoot  ">
-                <div className="row col-lg-8 col-12 mr-3 justify-content-around">
+                <div className="row col-lg-8 col-12 mr-2 justify-content-around">
                     <div>
                         <p className="text-muted">tên rạp</p>
                         <p>{thongTinPhim.tenRap}</p>
