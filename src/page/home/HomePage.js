@@ -3,7 +3,7 @@ import BannerCarousel from './banner/BannerCarousel'
 import Cinema from './cinema/Cinema'
 import FilmList from './filmList/FilmList'
 import PromotionBanner from './promotionBanner/PromotionBanner'
-import logo from '../../assets/img/logo.png'
+import conVat from '../../assets/img/convat.png'
 
 export default function HomePage() {
     return (
@@ -11,13 +11,13 @@ export default function HomePage() {
         <div className="home">
             <BannerCarousel />
             <div className="home__banner container-fluid p-5">
-                <div className="home__content row justify-content-center p-3">
-                    <div className="text-center m-5">
-                        <img src={logo} alt="123" className="img-fluid" />
+                <div className="home__content row justify-content-center align-items-center ">
+                    <div className="text-center col-6 col-sm-7 col-md-5 col-lg-3">
+                        <img src={conVat} alt="123" className="img-fluid"/>
                     </div>
-                    <div className="home__items mt-5 text-center">
-                        <h5>Introducing CGV Plus, the exclusive loyalty program that pays you back!</h5>
-                        <h4>ROXY PLUS. MORE MOVIES. MORE REWARDS.</h4>
+                    <div className="home__items text-center col-12 col-lg-8 m-3">
+                        <h5 className="home__small">Introducing CGV Plus, the exclusive loyalty program that pays you back!</h5>
+                        <h4 className=" home__small">ROXY PLUS. MORE MOVIES. MORE REWARDS.</h4>
                     </div>
                 </div>
             </div>

@@ -54,7 +54,7 @@ export default function BookTiket(props) {
                 </div> : null }
                 <div className="col-12 col-lg-7 ">
                     <h1>{thongTinPhim.tenPhim}</h1>
-                    <p className="text-secondary">
+                    <p className="text-white">
                         <i className="fa fa-map-marker-alt mr-3 text-white"></i>
                         {thongTinPhim.tenCumRap}
                     </p>

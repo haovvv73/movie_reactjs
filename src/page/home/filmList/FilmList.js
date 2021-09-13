@@ -27,8 +27,8 @@ export default function FilmList(props) {
 
     // trạng thái popup trailer
     const [onPop, setOnPop] = useState({
-        trailer:"",
-        on:false,
+        trailer: "",
+        on: false,
     });
 
     //hiển thị trailer
@@ -44,7 +44,7 @@ export default function FilmList(props) {
 
 
     const renderListPhim = () => {
-        return arrListPhim.slice(0,16).map((phim, index) => {
+        return arrListPhim.slice(0, 16).map((phim, index) => {
             return <div key={index} className="filmList__items">
                 {/* hình ảnh phim */}
                 <div className="filmList__img">
@@ -54,8 +54,8 @@ export default function FilmList(props) {
                         <div className="row justify-content-center align-items-center mb-5">
                             <div className="filmList__trailerBtn" onClick={() => {
                                 setOnPop({
-                                    trailer:phim.trailer,
-                                    on:true,
+                                    trailer: phim.trailer,
+                                    on: true,
                                 })
                             }}>
                                 <i className="fa fa-play"></i>
@@ -81,24 +81,26 @@ export default function FilmList(props) {
             <div className="filmList">
                 {/* hiển thị phim đang chiếu và sắp chiếu */}
                 <div className="btn__showing" style={{ width: '90%', margin: 'auto' }}>
-                    <button className={onShow} onClick={() => {
-                        // off nút sắp chiếu
-                        setOffShow("");
-                        // on nút đang chiếu
-                        setOnShow("btn__active")
-                        dispatch({
-                            type: SET_PHIMSHOWED,
-                        })
-                    }}>Đang chiếu</button>
-                    <button className={offShow} onClick={() => {
-                        // on nút sắp chiếu
-                        setOffShow("btn__active");
-                        // off nút đang chiếu
-                        setOnShow("")
-                        dispatch({
-                            type: SET_PHIMSHOWING,
-                        })
-                    }}>Sắp chiếu</button>
+                    <div className="row">
+                        <button className={onShow} onClick={() => {
+                            // off nút sắp chiếu
+                            setOffShow("");
+                            // on nút đang chiếu
+                            setOnShow("btn__active")
+                            dispatch({
+                                type: SET_PHIMSHOWED,
+                            })
+                        }}>Đang chiếu</button>
+                        <button className={offShow} onClick={() => {
+                            // on nút sắp chiếu
+                            setOffShow("btn__active");
+                            // off nút đang chiếu
+                            setOnShow("")
+                            dispatch({
+                                type: SET_PHIMSHOWING,
+                            })
+                        }}>Sắp chiếu</button>
+                    </div>
                     <hr style={{ borderTop: '1px solid rgba(0, 0, 0, 0.4)' }} />
                 </div>
                 {/* danh sách phim */}
