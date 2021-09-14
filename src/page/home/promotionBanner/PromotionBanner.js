@@ -18,11 +18,11 @@ export default function PromotionBanner() {
         focusOnSelect: true,
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 3000,
         arrows: false,
         dotsClass:"slick-dots custome__dots",
         customPaging: i => (

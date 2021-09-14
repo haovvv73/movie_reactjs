@@ -69,11 +69,11 @@ export default function BannerCarousel(props) {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 1000,
+        speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 90000,
+        autoplay: true,
+        autoplaySpeed: 5000,
         arrows: false,
         dotsClass: "slick-dots custome__dots",
         customPaging: i => (
