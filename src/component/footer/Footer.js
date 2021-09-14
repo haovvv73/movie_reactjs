@@ -3,9 +3,9 @@ import React from 'react';
 export default function Footer() {
     return (
         <footer className="footer container-fluid ">
+            <hr className="footer__hr mt-0"/>
             <div className="footer__content container py-5">
                 <div className="row justify-content-around">
-                    
                     <div className="col-6 col-lg-3">
                         <div className="footer__item footer__span">
                             <p className="text-white">Quick Links</p>
@@ -54,7 +54,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <hr />
+            <hr className="footer__hr" />
             <div className="footer__end pb-1">
                 <p className="ml-5" >Copyright Reserved © 2020 CGV Cinemas Sdn Bhd. All Rights Reserved.</p>
             </div>
