@@ -66,6 +66,7 @@ export default function Header() {
                 setSmallNav("");
             }
         }
+        onSmallNav();
         window.addEventListener('resize', onSmallNav);
         return () => {
             window.removeEventListener('resize', onSmallNav);
