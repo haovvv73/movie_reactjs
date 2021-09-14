@@ -38,7 +38,7 @@ export default function BannerCarousel(props) {
                 setAddMargin("");
             }
         }
-        onSmallNav();
+        setTimeout(onSmallNav,1000)
         window.addEventListener('resize', onSmallNav);
         return () => {
             window.removeEventListener('resize', onSmallNav);

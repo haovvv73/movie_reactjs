@@ -123,6 +123,7 @@
     }
     @media screen and (max-width: 850px) {
         .bannerCarousel__txt {
+            left: 10px;
             .txt__title {
                 font-size: 20px;
             }
@@ -136,12 +137,8 @@
             }
         }
     }
-    @media screen and (max-width: 850px) {
-        .bannerCarousel__txt {
-            left: 10px;
-        }
-    }
 }
 .bannerCarousel__margin {
     margin-top: 75px;
+    transition: 500ms;
 }

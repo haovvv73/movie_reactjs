@@ -65,7 +65,7 @@ export default function Header() {
                 // width > 650 off header__stick
                 setSmallNav("");
             }
-        }
+        };
         onSmallNav();
         window.addEventListener('resize', onSmallNav);
         return () => {
@@ -160,7 +160,7 @@ export default function Header() {
     return (
         <Fragment>
             <header className="header">
-                <nav className={`${nav} ${smallNav} header__navbar navbar navbar-expand-lg navbar-light fixed-top`}>
+                <nav className={`${nav} ${smallNav} header__navbar navbar navbar-expand-lg`}>
                     <NavLink className="header__grand navbar-brand" to="/" >
                         <img className="img-fluid" src={img_logo} alt='123' />
                     </NavLink>
