@@ -50,7 +50,7 @@
             color: rgba(0, 0, 0, 0.726);
             background-color: white;
             .filmList__span{
-                @include styleText(rgba(0, 0, 0, 0.671),$fs-1,$fw-1)
+                @include styleText($color-3,$fs-1,$fw-1)
             }
         }
     }

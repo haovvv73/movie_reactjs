@@ -4,6 +4,7 @@
     background-size: cover;
     position: relative;
     z-index: 1;
+    padding: 10% 0% 40px 0%;
     &::after {
         content: "";
         position: absolute;
@@ -15,7 +16,6 @@
         z-index: -1;
     }
     .filmDetail__content {
-        padding: 10% 10% 40px 10%;
         .filmDetail__img {
             img {
                 height: 330px;
@@ -27,6 +27,17 @@
         .filmDetail__txt {
             color: rgba(255, 255, 255, 0.788);
         }
+    }
+}
+.filmDetail__star{
+    .rate{
+        display: none;
+    }
+    .star{
+        cursor: pointer;
+    }
+    .starRating{
+        color: yellow;
     }
 }
 .filmDetail__trailer{

@@ -69,7 +69,10 @@ export default function FilmList(props) {
                     <div className="p-2">
                         <span> {phim.tenPhim} </span>
                         <p className="filmList__span"> Animation - adventure - horror </p>
-                        <span className="text-danger" style={{ fontSize: '14px' }}> <i className="fa fa-clock"></i> {moment(phim.ngayKhoiChieu).format('DD-MM-YYYY')} </span>
+                        <div className="d-flex justify-content-between">
+                            <span style={{ fontSize: '14px' }}> <i className="fa fa-clock text-secondary"></i> {moment(phim.ngayKhoiChieu).format('DD-MM-YYYY')} </span>
+                            <small>PG 15</small>
+                        </div>
                     </div>
                 </div>
             </div>

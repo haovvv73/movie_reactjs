@@ -12,12 +12,13 @@ export default function HomePage() {
             <BannerCarousel />
             <div className="home__banner container-fluid p-5">
                 <div className="home__content row justify-content-center align-items-center ">
-                    <div className="text-center col-6 col-sm-7 col-md-5 col-lg-3">
-                        <img src={conVat} alt="123" className="img-fluid"/>
-                    </div>
+                    
                     <div className="home__items text-center col-12 col-lg-8 m-3">
                         <h5 className="home__small">Introducing CGV Plus, the exclusive loyalty program that pays you back!</h5>
                         <h4 className=" home__small">ROXY PLUS. MORE MOVIES. MORE REWARDS.</h4>
+                    </div>
+                    <div className="text-center col-6 col-sm-7 col-md-5 col-lg-3">
+                        <img src={conVat} alt="123" className="img-fluid"/>
                     </div>
                 </div>
             </div>
