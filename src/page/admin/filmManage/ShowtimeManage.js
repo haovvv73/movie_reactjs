@@ -12,7 +12,7 @@ export default function ShowtimeManage(props) {
         initialValues: {
             maPhim: id,
             ngayChieuGioChieu: '',
-            maRap:'',
+            maRap: '',
             giaVe: '',
         },
         validationSchema: yup.object().shape({
@@ -20,11 +20,11 @@ export default function ShowtimeManage(props) {
             giaVe: yup.string().required('không bỏ trống').matches(/^[0-9]+$/, '150000 đ - 200000 đ'),
         }),
         onSubmit: values => {
-            const postTaoLichChieu = async (data)=>{
-                try{
+            const postTaoLichChieu = async (data) => {
+                try {
                     await adminService.taoLichChieu(data)
                     alert("ok tạo thành công")
-                }catch(error){
+                } catch (error) {
                 }
             }
             postTaoLichChieu(values);
@@ -86,9 +86,9 @@ export default function ShowtimeManage(props) {
         })
     }
 
-    const handleNgayChieu = (e)=>{
+    const handleNgayChieu = (e) => {
         let ngayChieu = moment(e.target.value).format("DD/MM/YYYY hh:mm:ss");
-        formik.setFieldValue('ngayChieuGioChieu',ngayChieu)
+        formik.setFieldValue('ngayChieuGioChieu', ngayChieu)
     }
 
     return (
@@ -108,6 +108,7 @@ export default function ShowtimeManage(props) {
                         <div className="form-group mb-3 ">
                             <label htmlFor="inpRap">cụm Rạp</label>
                             <select className="custom-select" id="inpRap" name="maRap" onChange={formik.handleChange}>
+                                <option value={''} > chose </option>
                                 {cumRapRender()}
                             </select>
                         </div>
@@ -121,7 +122,7 @@ export default function ShowtimeManage(props) {
 
                             <div className="form-group col">
                                 <label >Giá Vé</label>
-                                <input type="text" className="form-control" name="giaVe"  onChange={formik.handleChange} />
+                                <input type="text" className="form-control" name="giaVe" onChange={formik.handleChange} />
                                 {formik.errors.giaVe && <small className="text-danger">{formik.errors.giaVe}</small>}
                             </div>
                         </div>

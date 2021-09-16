@@ -182,7 +182,7 @@ export default function BookTiket(props) {
             }}> thanh toán </button>
         </div>
     }
-    // hiển thị khi width < 950px
+    // hiển thị khi width < 990px
     const billStickRender = () => {
         return <nav className="row fixed-bottom bg-dark justify-content-around align-items-center " style={{ zIndex: '10' }}>
             <button className="booking__btnpay ml-3" onClick={() => {
@@ -230,7 +230,7 @@ export default function BookTiket(props) {
                         {noteRender()}
                         {seatRender()}
                     </div>
-                    {size > 950 ? billRender() : billStickRender()}
+                    {size > 990 ? billRender() : billStickRender()}
                 </div>
             </div>
         </div>

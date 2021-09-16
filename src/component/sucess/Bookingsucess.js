@@ -12,11 +12,11 @@ export default function Bookingsucess() {
     return (
         <Fragment>
             {isSucess ? <div className="bookingSucess d-flex justify-content-center align-items-center position-fixed">
-                <div className="bookingSucess__items text-center p-5">
+                <div className="bookingSucess__items text-center p-4">
                     <img src={sucess} className="img-fluid" alt="123" />
                     <div className="mt-3">
-                        <h2> đặt vé thành công </h2>
-                        <p> vé đã được gửi về mail của bạn </p>
+                        <h2 className="span"> đặt vé thành công </h2>
+                        <p className="span"> vé đã được gửi về mail của bạn </p>
                         <button onClick={() => {
                             dispatch({
                                 type:HIDE_SUCESS,
@@ -25,7 +25,7 @@ export default function Bookingsucess() {
                         }} className="btn btn-success">xác nhận</button>
                     </div>
                 </div>
-            </div> : ""}
+            </div> : '' }
         </Fragment>
     )
 }
