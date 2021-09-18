@@ -222,8 +222,8 @@ export default function BookTiket(props) {
     }
 
     return (
-        <div style={{ backgroundColor: '#18181B', paddingBottom: '10%' }}>
-            <div className="booking ">
+        <div style={{ backgroundColor: '#18181B',height:'100vh'}}>
+            <div className="booking pb-5">
                 {infoRender()}
                 <div className="row mx-0 mt-5 align-items-center">
                     <div className="booking__items col-12 col-lg-9 mb-5">

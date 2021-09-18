@@ -38,7 +38,7 @@ export default function Register() {
                 }
                 try {
                     const result = await userService.dangKy(data);
-                    if (result.data.statusCode == 200) {
+                    if (result.data.statusCode === 200) {
                         toast.success('Đăng ký thành công', {
                             position: "top-center",
                             autoClose: 1000,

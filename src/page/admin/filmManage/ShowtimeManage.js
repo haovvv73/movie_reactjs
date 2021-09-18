@@ -52,7 +52,7 @@ export default function ShowtimeManage(props) {
             }
         }
         goiDataHeThongRap();
-    }, [])
+    }, [state])
 
     // goi api lay data cum rap
     const handleHeThongRap = (e) => {
