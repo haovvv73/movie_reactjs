@@ -3,15 +3,17 @@ import { useDispatch } from 'react-redux';
 //import libs
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { ToastContainer, toast} from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 //import action
 import { userService } from "../../services/UserService";
 import { history } from "../../App";
+import { Link } from 'react-router-dom';
 
 export default function Register() {
 
     const dispatch = useDispatch();
+
 
     // get dữ liệu với useFormik và validation với yup
     const formik = useFormik({
@@ -72,9 +74,9 @@ export default function Register() {
 
     return (
         <div className="register d-flex justify-content-center align-items-center">
+            {/* form đăng ký */}
             <div className="register__form mt-5">
                 <h3> <span className="text-danger">CGV</span> Chào Thành Viên Mới</h3>
-                {/* form đăng ký */}
                 <form onSubmit={formik.handleSubmit}>
                     <div className="form-group">
                         <input type="text" className="form-control" placeholder=" " name="taiKhoan" onChange={formik.handleChange} />
@@ -102,6 +104,9 @@ export default function Register() {
                         {formik.errors.soDt && formik.touched.soDt && <small className="text-danger validationRegister"> <i className="fa fa-exclamation-circle "></i> {formik.errors.soDt}</small>}
                     </div>
                     <button type="submit" className="container mt-4">Đăng Ký</button>
+                    <small className="text-dark"> Bạn đã có tài khoản ?
+                        <Link to="/login" className="text-danger ml-1">ĐĂNG NHẬP</Link>
+                    </small>
                 </form>
             </div>
             <div>

@@ -78,7 +78,6 @@ export default function BookTiket(props) {
             </div>
         </div>
     }
-
     // hiển thị lưu ý  
     const noteRender = () => {
         return <div className="booking__note mb-5" >

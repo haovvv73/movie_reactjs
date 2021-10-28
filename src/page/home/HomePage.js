@@ -12,7 +12,6 @@ export default function HomePage() {
             <BannerCarousel />
             <div className="home__banner container-fluid p-5">
                 <div className="home__content row justify-content-center align-items-center ">
-                    
                     <div className="home__items text-center col-12 col-lg-8 m-3">
                         <h5 className="home__small">Introducing CGV Plus, the exclusive loyalty program that pays you back!</h5>
                         <h4 className=" home__small">ROXY PLUS. MORE MOVIES. MORE REWARDS.</h4>

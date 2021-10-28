@@ -52,7 +52,7 @@ export default function ShowtimeManage(props) {
             }
         }
         goiDataHeThongRap();
-    }, [state])
+    }, [])
 
     // goi api lay data cum rap
     const handleHeThongRap = (e) => {
@@ -64,7 +64,6 @@ export default function ShowtimeManage(props) {
                     ...state,
                     cumRap: result.data.content,
                 })
-
             } catch (error) {
             }
         }
@@ -99,8 +98,8 @@ export default function ShowtimeManage(props) {
                     <div className="col-8">
                         <div className="form-group mb-3">
                             <label htmlFor="inpHeThongRap">Hệ Thống Rạp</label>
-                            <select className="custom-select" id="inpHeThongRap" onChange={handleHeThongRap} >
-                                <option value={''} > chose </option>
+                            <select className="custom-select" id="inpHeThongRap" onClick={handleHeThongRap} >
+                                <option> chose </option>
                                 {heThongRapRender()}
                             </select>
                         </div>
@@ -108,7 +107,7 @@ export default function ShowtimeManage(props) {
                         <div className="form-group mb-3 ">
                             <label htmlFor="inpRap">cụm Rạp</label>
                             <select className="custom-select" id="inpRap" name="maRap" onChange={formik.handleChange}>
-                                <option value={''} > chose </option>
+                                <option> chose </option>
                                 {cumRapRender()}
                             </select>
                         </div>

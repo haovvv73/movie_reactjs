@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { userService } from '../../services/UserService';
 import { DANG_NHAP } from '../../redux/type/case/nguoiDung/UserType';
 import { history } from '../../App';
+import { Link } from 'react-router-dom';
 
 export default function Login(props) {
 
@@ -74,21 +75,30 @@ export default function Login(props) {
     return (
         <div className="container login mt-5">
             <div className="row">
+                {/* form đăng nhập */}
                 <div className="login__form col-12 col-lg-6">
-                    {/* form đăng nhập */}
                     <form onSubmit={formik.handleSubmit}>
                         <h2 className="mb-4">XIN CHÀO</h2>
-                        <div className="position-relative form-group mt-2">
+                        <div className="form-group">
                             <input name="taiKhoan" onChange={formik.handleChange} type="text" className="form-control" placeholder=" " />
-                            <label >Tài Khoản</label>
-                            {formik.errors.taiKhoan && formik.touched.taiKhoan && <small className="text-danger validationLogin" > <i className="fa fa-exclamation-circle "></i> {formik.errors.taiKhoan}</small>}
+                            <label>Tài Khoản</label>
+                            {formik.errors.taiKhoan && formik.touched.taiKhoan && <small className="text-danger validationLogin" >
+                                <i className="fa fa-exclamation-circle "></i>
+                                {formik.errors.taiKhoan}
+                            </small>}
                         </div>
-                        <div className="position-relative form-group mt-5">
+                        <div className="form-group">
                             <input name="matKhau" onChange={formik.handleChange} type="password" className="form-control" placeholder=" " />
                             <label> Mật Khẩu</label>
-                            {formik.errors.matKhau && formik.touched.matKhau && <small className="text-danger validationLogin"> <i className="fa fa-exclamation-circle "></i> {formik.errors.matKhau}</small>}
+                            {formik.errors.matKhau && formik.touched.matKhau && <small className="text-danger validationLogin">
+                                <i className="fa fa-exclamation-circle "></i>
+                                {formik.errors.matKhau}
+                            </small>}
                         </div>
                         <button type="submit" className="container mt-3">Đăng Nhập</button>
+                        <small className="text-dark"> Bạn không phải là thành viên ? 
+                            <Link to="/register" className="text-danger ml-1">ĐĂNG KÝ NGAY</Link>
+                        </small>
                     </form>
                 </div>
                 <div className="loginImg col-12 col-lg-6 text-center">

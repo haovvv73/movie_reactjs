@@ -83,7 +83,8 @@ export default function BannerCarousel(props) {
     };
 
     return (
-        <div className={`bannerCarousel ${addMargin} `}>
+        <div className={`bannerCarousel`}>
+            <div className={`${addMargin}`}></div>
             <Slider {...settings} className="position-relative">
                 <div className="bannerCarousel__backGround">
                     <img src={banner1} className="img-fluid backGround" alt='123' />

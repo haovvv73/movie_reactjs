@@ -6,8 +6,10 @@
     box-shadow: 0 2px 10px 0 rgb(0, 0, 0);
     background-color: white;
     .login__form {
-        padding: 5%;
+        padding: 30px;
         .form-group {
+            position: relative;
+            margin-top: 40px;
             input {
                 box-shadow: none;
                 outline: none;

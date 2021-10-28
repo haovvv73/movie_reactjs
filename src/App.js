@@ -29,8 +29,8 @@ export const history = createBrowserHistory();
 function App() {
   return (
     <Router history={history}>
-      <ScrollToTop/>
       <Loading/>
+      <ScrollToTop/>
       <Bookingsucess/>
       <Switch>
         {/* home */}
@@ -47,7 +47,6 @@ function App() {
         <AdminTemp path="/userManage" exact Component={UserManage} />
         <AdminTemp path="/filmManage" exact Component={FilmManage} />
         <AdminTemp path="/showtimeManage/:id" exact Component={ShowtimeManage}/>
-
         <AdminTemp path="/filmManage/addFilm" exact Component={AddFilm}/>
         <AdminTemp path="/filmManage/editFilm/:id" exact Component={EditFilm}/>
       </Switch>

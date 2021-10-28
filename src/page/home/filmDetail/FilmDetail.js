@@ -25,13 +25,13 @@ export default function FilmDetail(props) {
         dispatch(FilmDetailAction(id));
         // lấy dữ liệu lịch chiếu theo phim
         dispatch(FilmDetailCinemaAction(id));
-    }, []);
+    },[]);
 
     let { tenPhim, ngayKhoiChieu, hinhAnh, trailer, moTa } = arrPhimDetail;
 
     // trạng thái rating sao cho phim
-    const [rating,setRating] = useState(null);
-    const [hoverStar,setHoverStar] = useState(3);
+    const [rating, setRating] = useState(null);
+    const [hoverStar, setHoverStar] = useState(3);
 
     // trạng thái popup trailer
     const [onPop, setOnPop] = useState(false);
@@ -40,7 +40,7 @@ export default function FilmDetail(props) {
     const trailerRender = () => {
         return <div className="filmDetail__trailer d-flex justify-content-center align-items-center"
             onClick={() => {
-                setOnPop("")
+                setOnPop('')
             }}>
             <iframe style={{ height: '40vw', width: '60vw' }} src={trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
@@ -60,21 +60,21 @@ export default function FilmDetail(props) {
                             <div className="p-2">
                                 <h2 className="text-white" >{tenPhim}</h2>
                                 <div className="row my-3">
-                                    <div className="col-12 col-md-5"> 
+                                    <div className="col-12 col-md-5">
                                         {[...Array(5)].map((star, index) => {
                                             const ratingValue = index + 1;
                                             return <label className="filmDetail__star mr-2" key={index}>
-                                                <input 
-                                                className="rate" 
-                                                type="radio" 
-                                                name="rating" 
-                                                value={ratingValue} 
-                                                onClick={()=>setRating(ratingValue)} />
-                                                
-                                                <span 
-                                                className={`star ${ratingValue <= (rating || hoverStar) ? 'starRating' : ''} `}
-                                                onMouseEnter={()=>setHoverStar(ratingValue)}
-                                                onMouseLeave={()=>setHoverStar(null)}
+                                                <input
+                                                    className="rate"
+                                                    type="radio"
+                                                    name="rating"
+                                                    value={ratingValue}
+                                                    onClick={() => setRating(ratingValue)} />
+
+                                                <span
+                                                    className={`star ${ratingValue <= (rating || hoverStar) ? 'starRating' : ''} `}
+                                                    onMouseEnter={() => setHoverStar(ratingValue)}
+                                                    onMouseLeave={() => setHoverStar(null)}
                                                 > <i className="fa fa-star"></i> </span>
                                             </label>
                                         })}

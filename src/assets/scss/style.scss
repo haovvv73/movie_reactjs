@@ -1,7 +1,6 @@
 // helper
 @import "./helpers/variables";
 @import "./helpers/mixin";
-@import "./helpers/responsive";
 
 //vendor
 @import "./vendors/loading";
@@ -18,6 +17,7 @@
 @import "./layouts/footer";
 @import "./layouts/sucess/sucessBooking.scss";
 @import "./layouts/adminslidebar/adminslidebar";
+
 // page 
 // _home
 @import "./pages/home/bannerCarousel";
