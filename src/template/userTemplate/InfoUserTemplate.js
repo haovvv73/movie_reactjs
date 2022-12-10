@@ -8,6 +8,7 @@ import Header from "../../component/header/Header";
 import imgBackground from '../../assets/img/background1.jpg';
 // import types
 import { USER_LOGIN } from "../../util/setting";
+import HeaderLite from '../../component/header/HeaderLite';
 
 export const InfoTemp = (props) => {
 
@@ -28,7 +29,7 @@ export const InfoTemp = (props) => {
 
     return <Route {...restProps} render={(propsRoute) => {
         return <Fragment>
-            <Header />
+            <HeaderLite />
             <div style={style}>
                 <Component {...propsRoute} />
             </div>

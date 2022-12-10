@@ -23,6 +23,7 @@ import FilmManage from './page/admin/filmManage/FilmManage';
 import ShowtimeManage from './page/admin/filmManage/ShowtimeManage';
 import EditFilm from './page/admin/filmManage/EditFilm';
 import AddFilm from './page/admin/filmManage/AddFilm';
+import { FilmTemp } from './template/homeTemplate/FilmTemplate';
 
 export const history = createBrowserHistory();
 
@@ -35,7 +36,7 @@ function App() {
       <Switch>
         {/* home */}
         <HomeTemp path="/" exact Component={HomePage} />
-        <HomeTemp path="/detail/:id" exact Component={FilmDetail} />
+        <FilmTemp path="/detail/:id" exact Component={FilmDetail} />
         {/* user */}
         <UserTemp path="/login" exact Component={Login} />
         <UserTemp path="/register" exact Component={Register}/>

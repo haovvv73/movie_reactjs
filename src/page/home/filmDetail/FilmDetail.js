@@ -63,7 +63,7 @@ export default function FilmDetail(props) {
             onClick={() => {
                 setOnPop('')
             }}>
-            <iframe style={{ height: '550px', width: '90vw' }} src={`${trailer}?rel=0&autoplay=1`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <iframe style={{ height: '550px', width: '90vw' }} src={`${trailer.replace('https://www.youtube.com/', 'https://www.youtube.com/embed/').replace('watch?v=','')}?rel=0&autoplay=1`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
     }
 
