@@ -1,0 +1,46 @@
+// helper
+@import "./helpers/variables";
+@import "./helpers/mixin";
+
+//vendor
+@import "./vendors/loading";
+
+// base
+@import "./base/reset";
+
+// component
+@import "./components/button";
+
+// layout
+@import "./layouts/header/header";
+@import "./layouts/header/headerCinema";
+@import "./layouts/footer";
+@import "./layouts/sucess/sucessBooking.scss";
+@import "./layouts/adminslidebar/adminslidebar";
+
+// page 
+// _home
+@import "./pages/home/bannerCarousel";
+@import "./pages/home/filmList";
+@import "./pages/home/filmDetail";
+@import "./pages/home/filmDetailChat";
+@import "./pages/home//filmDetailCinema";
+@import "./pages/home/cinema";
+@import "./pages/home/promotionBanner";
+// _login
+@import "./pages/login/login";
+// _register
+@import "./pages/register/register";
+// _booking
+@import "./pages/booking/booking";
+//_info
+@import "./pages/info/infoUser";
+//_admin
+@import "./pages/admin/dasboard";
+@import "./pages/admin/filmManage";
+@import "./pages/admin/userManage";
+@import "./pages/admin/showtimeManage";
+
+// theme
+@import "./themes/hometemplate";
+@import "./themes/admintenplate";

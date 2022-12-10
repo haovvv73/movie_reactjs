@@ -1,0 +1,32 @@
+.infoUser {
+    .infoUser__content {
+        .infoUser__diplay {
+            border: 4px solid #ca333a;
+            padding: 5%;
+            background-color: white;
+        }
+        .infoUser__menu {
+            background-color: #ca333a;
+            border: 4px solid white;
+            height: 100%;
+            .infoUser__list{
+                list-style: none;
+                .infoUser__items {
+                    display: inline-block;
+                    button {
+                        border: none;
+                        padding: 18px;
+                        font-size: 30px;
+                        color: white;
+                        background-color: transparent;
+                        transition: 0.5s;
+                        &:hover {
+                            transition: 0.5s;
+                            transform: scale(1.3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

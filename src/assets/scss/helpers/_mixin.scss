@@ -1,0 +1,13 @@
+@mixin styleText($color,$fs,$fw){
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+@mixin distance($pd,$mg){
+    padding: $pd;
+    margin: $mg;
+}
+@mixin hoverColor($color,$time){
+    color: $color;
+    transition: $time;
+}

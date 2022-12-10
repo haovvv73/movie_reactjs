@@ -1,0 +1,89 @@
+// css nav bar
+.header {
+    .header__navbar {
+        height: $hw-1;
+        background-color: transparent;
+        transition: 1s;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        .header__grand {
+            img {
+                height: $hw-3;
+            }
+        }
+        .header__content {
+            a {
+                color: $color-5;
+                cursor: pointer;
+                &:hover {
+                    color: $color-3;
+                    transition: 0.5s;
+                }
+                &:focus {
+                    color: white;
+                }
+            }
+        }
+    }
+    //config libs
+    .navbar-light .navbar-nav .active > .nav-link,
+    .navbar-light .navbar-nav .nav-link.active,
+    .navbar-light .navbar-nav .nav-link.show,
+    .navbar-light .navbar-nav .show > .nav-link {
+        color: white;
+    }
+    // khi croll man hinh
+    .header__stick {
+        padding: 0px 50px;
+        height: 80px;
+        background-color: black;
+        transition: 1s;
+    }
+}
+// css silde bar
+.nav__slide {
+    background-color: black;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: 850ms;
+    z-index: 11;
+    .nav__slideTxt {
+        padding: 8px 0px 8px 16px;
+        list-style: none;
+        height: 60px;
+        a {
+            text-decoration: none;
+            color: #f5f5f5;
+            font-size: 18px;
+            width: 95%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            border-radius: 4px;
+            &:hover {
+                background-color: #1a83ff;
+            }
+        }
+    }
+    .nav__close {
+        i {
+            font-size: 30px;
+            cursor: pointer;
+            &:hover {
+                transition: 0.3s;
+                color: $color-3;
+            }
+        }
+    }
+}
+.nav__slideActive {
+    right: 0;
+    transition: 350ms;
+}

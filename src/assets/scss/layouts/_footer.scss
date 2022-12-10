@@ -1,0 +1,36 @@
+.footer{  
+    background-color: $color-4;
+    .footer__hr{
+        background-color: rgba(245, 245, 245, 0.253);
+    }
+    .footer__item{
+        .footer__mail{
+            input{
+                box-shadow: none;
+                outline: none;
+            }
+        }
+        p{
+            color: $color-6;
+            a{
+                color: $color-6;
+                i:hover{
+                    @include hoverColor($color-3,0.5s);
+                }
+            }
+        }
+    }
+    .footer__span{
+        a{
+            text-decoration: none;
+            p:hover{
+                @include hoverColor($color-3,0.5s);
+            }
+        }
+    }
+    .footer__end{
+        p{
+            @include styleText($color-6,$fs-1,$ls-1);
+        }
+    }
+}

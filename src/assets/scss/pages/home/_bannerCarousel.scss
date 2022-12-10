@@ -1,0 +1,151 @@
+.bannerCarousel {
+    //css lib
+    .slick-slider {
+        .custome__dots {
+            bottom: 25px;
+            z-index: 2;
+            width: 45%;
+            right: 0px;
+            li {
+                div {
+                    width: 15px;
+                    height: 15px;
+                    border: 1px white solid;
+                    border-radius: 50%;
+                    background-color: transparent;
+                }
+            }
+            .slick-active {
+                div {
+                    width: 15px !important;
+                    height: 15px !important;
+                    border: 1px white solid !important;
+                    border-radius: 50% !important;
+                    background-color: white !important;
+                }
+            }
+        }
+        @media screen and (max-width: 500px) {
+            .custome__dots {
+                width: 100%;
+                right: 0px;
+                bottom: -25px;
+                z-index: 1;
+                li {
+                    div {
+                        width: 15px;
+                        height: 15px;
+                        border: 1px gray solid;
+                        border-radius: 50%;
+                        background-color: transparent;
+                    }
+                }
+                .slick-active {
+                    div {
+                        width: 15px !important;
+                        height: 15px !important;
+                        border: 1px white solid !important;
+                        border-radius: 50% !important;
+                        background-color: gray !important;
+                    }
+                }
+            }
+        }
+    }
+    //css lib
+    margin-bottom: 0px;
+    position: relative;
+    //background dark banner
+    .bghead {
+        position: absolute;
+        width: 100vw;
+        height: 12vw;
+        top: 0;
+        left: 0;
+    }
+    .bgfoot {
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+    }
+    // css banner
+    .bannerCarousel__backGround {
+        position: relative;
+        .backGround {
+            height: 36vw;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        .bannerCarousel__backGround {
+            .backGround {
+                height: 60vw;
+            }
+        }
+    }
+    // css banner info
+    .bannerCarousel__txt {
+        position: absolute;
+        left: 50px;
+        bottom: 30px;
+        .txt__title {
+            font-size: 60px;
+            text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 2px 2px 3px black, -2px 2px 3px black, 3px -2px 2px black, -2px -2px 3px black;
+            text-transform: uppercase;
+        }
+        .txt__type{
+            font-size: 15px;
+            color: white;
+            text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 2px 2px 3px black, -2px 2px 3px black, 3px -2px 2px black, -2px -2px 3px black;
+            text-transform: uppercase;
+        }
+        .txt__button {
+            width: 150px;
+            height: 50px;
+            color: white;
+            border: white;
+            background-color: $color-3;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        .bannerCarousel__txt {
+            .txt__title {
+                font-size: 30px;
+            }
+            .txt__type{
+                font-size: 13px;
+            }
+            .txt__button {
+                font-size: 15px;
+                width: 100px;
+                height: 40px;
+            }
+        }
+    }
+    @media screen and (max-width: 850px) {
+        .bannerCarousel__txt {
+            left: 10px;
+            .txt__title {
+                font-size: 20px;
+            }
+            .txt__type{
+                font-size: 10px;
+            }
+            .txt__button {
+                font-size: 13px;
+                width: 90px;
+                height: 40px;
+            }
+        }
+    }
+}
+// class animation loading
+.bannerCarousel__marginOff{
+    width: 100%;
+    height: 0px;
+    transition: 500ms;
+}
+.bannerCarousel__marginOn{
+    width: 100%;
+    height: 75px;
+    transition: 500ms;
+}

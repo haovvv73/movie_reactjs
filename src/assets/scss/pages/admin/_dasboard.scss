@@ -1,0 +1,13 @@
+.admin{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.admin_box{
+    height: 300px;
+    border-radius: 10px;
+    border: 2px solid blue;
+    &:hover{
+        transition: 500ms;
+        transform: rotateX(20deg);
+    }
+}

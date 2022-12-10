@@ -1,0 +1,118 @@
+.booking {
+    background-color: #18181b;
+    .booking__info {
+        padding-top: 120px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(190deg, rgba(23, 23, 23, 0.2) 0, black);
+            z-index: 0;
+        }
+        .booking__infohead {
+            margin-bottom: -55px;
+            position: relative;
+            z-index: 2;
+        }
+        .booking__infofoot {
+            position: relative;
+            background-color: #1d1e22;
+            padding: 55px 0px;
+            z-index: 1;
+            justify-content: end;
+            align-items: center;
+        }
+        @media screen and (max-width: 1050px) {
+            .booking__infofoot {
+                position: relative;
+                background-color: #1d1e22;
+                padding: 15px 0px;
+                margin-top: 50px;
+                z-index: 1;
+                justify-content: center;
+                align-items: flex-end;
+            }
+        }
+        .booking__img {
+            img {
+                width: 325px;
+                height: 405px;
+                border-radius: 5px;
+            }
+        }
+    }
+    .booking__items {
+        //  ghe ngoi
+        .booking__seat {
+            background-color: #1d1e22;
+            border-radius: 50%/100px 100px 0 0;
+            .booking__screen {
+                width: 50vw;
+                height: 80px;
+                border: solid 5px #000;
+                border-color: red transparent transparent transparent;
+                border-radius: 50%/20px 20px 0 0;
+            }
+            .booking__chair {
+                display: grid;
+                grid-template-columns: repeat(13, 1fr);
+                grid-template-rows: repeat(13, 1fr);
+                width: 100%;
+                max-width: 535px;
+                height: 535px;
+                @media only screen and (max-width: 500px) {
+                    height: 330px;
+                    width: 330px;
+                }
+                gap: 10px;
+            }
+        }
+        //  gia ca
+        .booking__price {
+            .booking__priceItems {
+                margin: 10px;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+// css loai ghe
+.chair__nomarl {
+    background-color: gray;
+    border: gray 2px solid;
+    border-radius: 3px;
+}
+.chair__vip {
+    background-color: rgba(255, 217, 0, 0.719);
+    border: rgba(255, 217, 0, 0.719) 2px solid;
+    border-radius: 3px;
+}
+.chair__select {
+    background-color: blue;
+    border: blue 2px solid;
+    box-shadow: 0px 0px 14px 0px rgba(10, 13, 233, 0.75);
+    border-radius: 3px;
+}
+.chair__booked {
+    background-color: transparent;
+    border: gray 2px solid;
+    cursor: no-drop;
+    border-radius: 3px;
+}
+.chair__user {
+    background-color: transparent;
+    border: white 2px solid;
+    cursor: no-drop;
+    border-radius: 3px;
+}
+.booking__infobtn {
+    height: 10px;
+    width: 5px;
+}

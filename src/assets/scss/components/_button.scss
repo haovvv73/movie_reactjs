@@ -1,0 +1,150 @@
+// button footer
+.btnFooter {
+    background-color: $color-3;
+    padding: 8px 30px 8px;
+    border: none;
+    @include styleText($color-5, $fs-7, 0px);
+}
+// button filmList
+.filmList__overtxt {
+    .filmList__btn {
+        border: none;
+        width: 230px;
+        height: 70px;
+        //responsive
+        @media screen and (max-width: 700px) {
+            @include styleText($color-3, 18px, $fw-3);
+            width: 145px;
+            height: 50px;
+        }
+        @include styleText($color-3, $fs-2, $fw-3);
+        position: relative;
+        background-color: white;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transition: 0.3s;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.288);
+        }
+    }
+    .filmList__btn:hover::before {
+        transition: 0.5s;
+        left: 50%;
+        right: 50%;
+        width: 0px;
+        opacity: 0;
+    }
+    .filmList__trailerBtn {
+        font-size: 30px;
+        width: 60px;
+        height: 60px;
+        //responsive
+        @media screen and (max-width: 700px) {
+            font-size: 25px;
+            width: 50px;
+            height: 50px;
+        }
+        border-radius: 50%;
+        border: 2px solid white;
+        padding-left: 5px;
+        line-height: 1.7;
+        transition: 0.2s;
+    }
+    .filmList__trailerBtn:hover {
+        transition: 0.5s;
+        transform: scale(1.2);
+    }
+}
+.filmList {
+    .btn__showing {
+        button {
+            height: 60px;
+            width: 180px;
+            border: black 1px solid;
+            margin: 5px;
+            background-color: transparent;
+            font-weight: 700;
+            font-size: 20px;
+            &:hover {
+                background-color: $color-3;
+                border: $color-3 1px solid;
+                color: white;
+                transition: 0.5s;
+            }
+        }
+        .btn__active {
+            background-color: $color-3;
+            border: $color-3 2px solid;
+            color: white;
+        }
+    }
+}
+// button filmDetail
+.filmDetail {
+    .filmDetail__btn {
+        border: none;
+        padding: 13px 40px;
+        border-radius: 10px;
+        @include styleText(white, $fs-2, $fw-3);
+        background-color: transparent;
+        border: 2px solid rgb(255, 255, 255);
+        transition: 0.5s;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            transition: 0.4s linear;
+            bottom: -7px;
+            right: 10%;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            transition: 0.4s linear;
+            top: -7px;
+            left: 10%;
+        }
+    }
+    .filmDetail__btn:hover {
+        &::before {
+            left: 80%;
+            background-color: rgb(255, 0, 0);
+        }
+        &::after {
+            right: 80%;
+            background-color: rgb(255, 0, 0);
+        }
+        border: 2px solid $color-3;
+        color: $color-3;
+    }
+}
+//button bookTicket
+.booking__btnpay {
+    color: white;
+    border: none;
+    background-color: $color-3;
+    height: 70px;
+    padding: 0px 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px 5px rgba(240, 127, 127, 0.226);
+    //hover
+    &:hover {
+        transition: 0.5s;
+        color: $color-3;
+        background-color: white;
+        border: 1px solid $color-3;
+    }
+}
